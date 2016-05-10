@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="renderer" content="webkit">
+        <title>账号修改</title>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}/Public/Admin/BootStrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}Public/Admin/BootStrap/css/bootstrap-table.min.css">
+		<!--js文件引入-->
+		<script type="text/javascript" src="{$Think.const.WWW_PUB}Public/Admin/BootStrap/js/jquery-1.11.1.min.js"></script>		
+		<script type="text/javascript" src="{$Think.const.WWW_PUB}Public/Admin/BootStrap/js/bootstrap.min.js"></script>
+	</head>
+    <body>
+        <div>
+            <div class="modal-body">
+                <form id="wt-forms" method="post" tabindex="-1" onsubmit="return false;" class="form-horizontal">
+                    <input type="hidden" value="{$account_rows[0]['user_account_id']}" name="user_account_id">
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">登录账号：</label>
+                        <div class="col-xs-8">
+                            <input type="text" id="user_account" value="{$account_rows[0]['user_account']}" name="user_account" class="form-control input-sm"> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">密码：</label>
+                        <div class="col-xs-8">
+                            <input type="password" id="user_pwd" name="user_pwd" value="{$account_rows[0]['user_pwd']}" class="form-control input-sm"> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">对应用户：</label>
+                        <div class="col-xs-8">
+                            <select name="user_id">
+                                <foreach name="user_rows" item="user_row">                                    
+                                    <option <if condition="$account_rows[0]['user_id'] eq $user_row['user_id']">selected="selected"</if> value="{$user_row['user_id']}">{$user_row['user_name']}</option>
+                                </foreach>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">对应角色：</label>
+                        <div class="col-xs-8">
+                            <select name="role_id">
+                                <foreach name="role_rows" item="role_row">
+                                    <option <if condition="$account_rows[0]['role_id'] eq $role_row['role_id']">selected="selected"</if> value="{$role_row['role_id']}">{$role_row['role_name']}</option>
+                                </foreach>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">是否启用：</label>
+                        <div class="col-xs-8">
+                            <input type="radio" name="isenable" value="0" <if condition="$account_rows[0]['isenable'] eq 0">checked="checked"</if>>启用
+                            <input type="radio" name="isenable" value="1" <if condition="$account_rows[0]['isenable'] eq 1">checked="checked"</if>>禁用
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">是否为管理员：</label>
+                        <div class="col-xs-8">
+                            <input type="radio" name="is_admin" value="0" <if condition="$account_rows[0]['is_admin'] eq 0">checked="checked"</if>>管理员
+                            <input type="radio" name="is_admin" value="1" <if condition="$account_rows[0]['is_admin'] eq 1">checked="checked"</if>>普通用户
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

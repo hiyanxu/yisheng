@@ -1,0 +1,9 @@
+body{
+	background-color:#F2F2F2;
+}
+div .DivisionLine{
+	background-color:#E5E5E5;
+	height:1px; 
+	width:100%;
+	margin-top:5px;
+}

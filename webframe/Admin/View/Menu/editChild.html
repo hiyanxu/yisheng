@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="renderer" content="webkit">
+        <title>修改子菜单</title>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}/Public/Admin/BootStrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}Public/Admin/BootStrap/css/bootstrap-table.min.css">
+		<!--js文件引入-->
+		<script type="text/javascript" src="{$Think.const.WWW_PUB}Public/Admin/BootStrap/js/jquery-1.11.1.min.js"></script>		
+		<script type="text/javascript" src="{$Think.const.WWW_PUB}Public/Admin/BootStrap/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<div class="modal-body">
+				<form id="wt-forms" method="post" tabindex="-1" onsubmit="return false;" class="form-horizontal">
+					<input type="hidden" value="{$row['0']['menu_id']}" name="menu_id">
+                    <input type="hidden" value="{$row_father[0]['menu_id']}" name="parentid">
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">父级菜单名称：</label>
+                        <div class="col-xs-8">
+                            <input type="text" value="{$row_father['0']['menu_name']}" readonly="readonly" class="form-control input-sm"> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">菜单名称：</label>
+                        <div class="col-xs-8">
+                            <input type="text" name="menu_name" value="{$row[0]['menu_name']}" class="form-control input-sm"> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">链接控制器：</label>
+                        <div class="col-xs-8">
+                            <input type="text" name="controller" value="{$row[0]['menu_con']}" class="form-control input-sm"> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">链接方法：</label>
+                        <div class="col-xs-8">
+                            <input type="text" name="function" value="{$row[0]['menu_fun']}" class="form-control input-sm"> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">是否显示：</label>
+                        <div class="col-xs-8">
+                            <input type="radio" name="ishidden" <if condition="$row[0]['ishidden'] eq 0">checked="checked"</if>  value="0">显示&nbsp;&nbsp;
+                            <input type="radio" name="ishidden" <if condition="$row[0]['ishidden'] eq 1">checked="checked"</if> value="1">禁用
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">排序：</label>
+                        <div class="col-xs-8">
+                            <input type="text" name="sort" value="{$row[0]['sort']}" class="form-control input-sm"> 
+                        </div>
+                    </div>
+                </form>
+			</div>
+		</div>		
+	</body>
+</html>

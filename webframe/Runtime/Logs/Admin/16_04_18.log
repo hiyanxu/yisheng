@@ -1,0 +1,108 @@
+[ 2016-04-18T18:44:12+08:00 ] 123.122.153.194 /webframework/webframe/index.php/Admin/Menu/ajaxIndex?limit=15&offset=0&sort=id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000636s ]
+SQL: SHOW COLUMNS FROM `behavior_log` [ RunTime:0.0008s ]
+SQL: INSERT INTO `behavior_log` (`behavior_log_account`,`behavior_log_con`,`behavior_log_func`,`behavior_log_time`,`behavior_log_ip`) VALUES ('14','Menu','ajaxIndex','1460976252','123.122.153.194') [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0004s ]
+SQL: SELECT `menu_id`,`menu_name`,`parentid`,`menu_url`,`sort`,`ishidden` FROM `menu` WHERE ( parentid=0 ) ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-04-18T18:44:19+08:00 ] 123.122.153.194 /webframework/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000959s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) ORDER BY user.user_id desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-04-18T18:44:22+08:00 ] 123.122.153.194 /webframework/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=1&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='1' ) ORDER BY user.user_id desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='1' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-04-18T18:44:32+08:00 ] 123.122.153.194 /webframework/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000646s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) ORDER BY user.user_id desc  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0004s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-04-18T22:13:51+08:00 ] 124.126.161.97 /webframework/webframe/index.php/Admin/Useraccount/ajaxIndex?limit=15&offset=0&sort=account.user_account_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `behavior_log` [ RunTime:0.0007s ]
+SQL: INSERT INTO `behavior_log` (`behavior_log_account`,`behavior_log_con`,`behavior_log_func`,`behavior_log_time`,`behavior_log_ip`) VALUES ('14','Useraccount','ajaxIndex','1460988831','124.126.161.97') [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT user.user_name,account.user_account_id,account.user_account,account.role_id,account.isenable,account.is_admin FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id ) ORDER BY account.user_account_id desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0004s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='1' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-04-18T22:13:57+08:00 ] 124.126.161.97 /webframework/webframe/index.php/Admin/Role/ajaxIndex?limit=15&offset=0&sort=role_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000389s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000710s ]
+SQL: SHOW COLUMNS FROM `behavior_log` [ RunTime:0.0008s ]
+SQL: INSERT INTO `behavior_log` (`behavior_log_account`,`behavior_log_con`,`behavior_log_func`,`behavior_log_time`,`behavior_log_ip`) VALUES ('14','Role','ajaxIndex','1460988837','124.126.161.97') [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_id`,`role_name`,`role_desc` FROM `role` ORDER BY role_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `role` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-04-18T22:17:41+08:00 ] 124.126.161.97 /webframework/webframe/index.php/Admin/Role/ajaxIndex?limit=15&offset=0&sort=role_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+SQL: SHOW COLUMNS FROM `behavior_log` [ RunTime:0.0008s ]
+SQL: INSERT INTO `behavior_log` (`behavior_log_account`,`behavior_log_con`,`behavior_log_func`,`behavior_log_time`,`behavior_log_ip`) VALUES ('14','Role','ajaxIndex','1460989061','124.126.161.97') [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_id`,`role_name`,`role_desc` FROM `role` ORDER BY role_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `role` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-04-18T22:17:42+08:00 ] 124.126.161.97 /webframework/webframe/index.php/Admin/Role/ajaxIndex?limit=15&offset=0&sort=role_id&order=asc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+SQL: SHOW COLUMNS FROM `behavior_log` [ RunTime:0.0008s ]
+SQL: INSERT INTO `behavior_log` (`behavior_log_account`,`behavior_log_con`,`behavior_log_func`,`behavior_log_time`,`behavior_log_ip`) VALUES ('14','Role','ajaxIndex','1460989062','124.126.161.97') [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0004s ]
+SQL: SELECT `role_id`,`role_name`,`role_desc` FROM `role` ORDER BY role_id asc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `role` LIMIT 1   [ RunTime:0.0002s ]
+
