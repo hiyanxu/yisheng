@@ -1,0 +1,66 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
+<html>
+	<head>		
+		<meta Charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/css/bootstrap.min.css">		
+		<link rel="stylesheet" type="text/css" href="<?php echo (WWW_PUB); ?>Public/Admin/index/css/head.css">
+                <link rel="stylesheet" type="text/css" href="<?php echo (WWW_PUB); ?>Public/Admin/index/css/ace.min.css">
+		<script src="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/js/jquery-1.11.1.min.js"></script>
+		<script src="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/js/bootstrap.min.js"></script>
+                
+                <style type="text/css">
+                    #aFrontPage:hover{
+                        color:greenyellow;
+                        background-color:#438EB9;
+                    }
+                    #aFrontPage:visited{
+                        background-color:#438EB9;
+                    }
+                    #aLogout:hover{
+                        color:greenyellow;
+                        background-color:#438EB9;
+                    }
+                    #aLogout:visited{
+                        background-color:#438EB9;
+                    }
+                </style>
+	</head>
+	<body>
+		<nav style="background-color:#438EB9" class="navbar navbar-fixed-top"  role="navigation">
+			<div class="navbar-header">
+				<span style="color:white;" class="navbar-brand">
+					<span class="glyphicon glyphicon-book"></span>
+					以升管理系统
+				</span>
+			</div>
+			<div >
+				<ul class="nav navbar-nav">
+                                    <li class="dropdown">
+						<a style="background-color:#62A8D1;" class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<img class="img-circle img-inline userpic-32" width="28" src="<?php echo (WWW_PUB); ?>Public/Admin/index/images/user.png">
+                                                        <span style="color:white;">
+								<?php echo ($userName); ?>
+								<b class="caret"></b>
+							</span>
+						</a>
+                                                <ul class="dropdown-menu user-profile-menu list-unstyled" role="menu">
+							<li>
+								<a href="/yisheng/webframe/index.php/Admin/Index/Index/index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;FrontPage</a>
+							</li>
+							<hr style="margin-top:0px;"></hr>
+							<li style="margin-top:-20px;">
+								<a  href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;Logout</a>
+							</li>
+						</ul>
+                                            
+					</li>	
+                                        <li class="active"><a id="aFrontPage" style="color:white; margin-top: 5px;" href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> FrontPage</a></li>
+                                        <li><a id="aLogout" style="color:white; margin-top: 5px;" href="/yisheng/webframe/index.php/Admin/Index/logout"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout</a></li>
+				</ul>                                
+			</div>
+		</nav>
+	</body>
+</html>

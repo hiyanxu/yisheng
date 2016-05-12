@@ -1,0 +1,992 @@
+[ 2016-05-12T00:00:26+08:00 ] 125.33.49.174 /yisheng/webframe/index.php/Admin/News/ajaxIndex?limit=15&offset=0&sort=news.news_id&order=desc&ex_status=&news_org_id=&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0005s ]
+SQL: SELECT news.workflow_step,cate.cate_name,news.news_name,news.news_id,news.addtime,news.news_time,org.org_name,news.add_account,news.ex_status,news.re_status FROM `category` `cate`,`news` `news`,`organization` `org` WHERE ( cate.cate_id=news.news_cate_id and news.news_org_id=org.org_id ) ORDER BY news.news_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` `cate`,`news` `news`,`organization` `org` WHERE ( cate.cate_id=news.news_cate_id and news.news_org_id=org.org_id ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id='19' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id='7' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `news_workflow` [ RunTime:0.0006s ]
+SQL: SELECT `workflow_id` FROM `news_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0007s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id='8' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflowstep` [ RunTime:0.0006s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id='8' and role_id='1' )  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id='19' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id='7' )  [ RunTime:0.0002s ]
+SQL: SELECT `workflow_id` FROM `news_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id='8' )  [ RunTime:0.0003s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id='8' and role_id='1' )  [ RunTime:0.0004s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id='18' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id='7' )  [ RunTime:0.0002s ]
+SQL: SELECT `workflow_id` FROM `news_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id='8' )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id='8' and role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id='18' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id='7' )  [ RunTime:0.0002s ]
+SQL: SELECT `workflow_id` FROM `news_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id='8' )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id='8' and role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id='18' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id='7' )  [ RunTime:0.0002s ]
+SQL: SELECT `workflow_id` FROM `news_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id='8' )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id='8' and role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id='14' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `workflow_id` FROM `news_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id='8' )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id='8' and role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id='18' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id='7' )  [ RunTime:0.0002s ]
+SQL: SELECT `workflow_id` FROM `news_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id='8' )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id='8' and role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id='14' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `workflow_id` FROM `news_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id='8' )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id='8' and role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id='14' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `workflow_id` FROM `news_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id='8' )  [ RunTime:0.0001s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id='8' and role_id='1' )  [ RunTime:0.0002s ]
+
+[ 2016-05-12T11:44:42+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Lecture/add
+ERR: Think\Model:first方法不存在！
+
+[ 2016-05-12T11:44:52+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Lecture/add
+ERR: Think\Model:first方法不存在！
+
+[ 2016-05-12T11:45:31+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Menu/ajaxIndex?limit=15&offset=0&sort=id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0005s ]
+SQL: SELECT `menu_id`,`menu_name`,`parentid`,`menu_url`,`sort`,`ishidden` FROM `menu` WHERE ( parentid=0 ) ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T11:45:54+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Menu/insert
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0005s ]
+SQL: SELECT `menu_id`,`sort` FROM `menu` WHERE ( sort='9' and parentid='0' )  [ RunTime:0.0002s ]
+SQL: SELECT `parentid`,`sort`,`menu_id` FROM `menu` WHERE ( sort='10' and parentid='0' )  [ RunTime:0.0002s ]
+SQL: UPDATE `menu` SET `sort`='10' WHERE ( menu_id='31' ) [ RunTime:0.0073s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/yisheng/webframe/Admin/Controller/MenuController.class.php 第 69 行.
+NOTIC: [8] Undefined offset: 0 /var/www/html/yisheng/webframe/Admin/Controller/MenuController.class.php 第 69 行.
+NOTIC: [8] Undefined offset: 0 /var/www/html/yisheng/webframe/Admin/Controller/MenuController.class.php 第 69 行.
+SQL: SELECT `menu_id`,`sort` FROM `menu` WHERE ( sort='' and parentid='' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0005s ]
+SQL: INSERT INTO `menu` (`parentid`,`menu_name`,`menu_url`,`sort`,`ishidden`) VALUES ('0','实验室管理','Workshop/index','9','0') [ RunTime:0.0046s ]
+
+[ 2016-05-12T11:45:54+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Menu/ajaxIndex?limit=15&offset=0&sort=id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0005s ]
+SQL: SELECT `menu_id`,`menu_name`,`parentid`,`menu_url`,`sort`,`ishidden` FROM `menu` WHERE ( parentid=0 ) ORDER BY sort asc  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T11:45:59+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Menu/childAjaxIndex?limit=15&offset=0&sort=id&order=desc&menu_id=41&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000737s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0005s ]
+SQL: SELECT `menu_id`,`menu_name`,`parentid`,`menu_url`,`sort`,`ishidden` FROM `menu` WHERE ( parentid='41' ) ORDER BY sort asc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: parentid /var/www/html/yisheng/webframe/Admin/Controller/MenuController.class.php 第 132 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T11:46:21+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Menu/ajaxIndex?limit=15&offset=0&sort=id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0005s ]
+SQL: SELECT `menu_id`,`menu_name`,`parentid`,`menu_url`,`sort`,`ishidden` FROM `menu` WHERE ( parentid=0 ) ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T11:46:28+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Menu/update
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0005s ]
+SQL: SELECT `menu_id`,`sort` FROM `menu` WHERE ( sort='9' and parentid='0' )  [ RunTime:0.0002s ]
+SQL: SELECT `parentid`,`sort`,`menu_id` FROM `menu` WHERE ( sort='10' and parentid='0' )  [ RunTime:0.0002s ]
+SQL: UPDATE `menu` SET `sort`='10' WHERE ( menu_id='41' ) [ RunTime:0.0076s ]
+SQL: SELECT `menu_id`,`sort` FROM `menu` WHERE ( menu_id='31' )  [ RunTime:0.0003s ]
+SQL: SELECT `parentid`,`sort`,`menu_id` FROM `menu` WHERE ( sort='11' and parentid='0' )  [ RunTime:0.0002s ]
+SQL: UPDATE `menu` SET `sort`='11' WHERE ( menu_id='31' ) [ RunTime:0.0049s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/yisheng/webframe/Admin/Controller/MenuController.class.php 第 69 行.
+NOTIC: [8] Undefined offset: 0 /var/www/html/yisheng/webframe/Admin/Controller/MenuController.class.php 第 69 行.
+NOTIC: [8] Undefined offset: 0 /var/www/html/yisheng/webframe/Admin/Controller/MenuController.class.php 第 69 行.
+SQL: SELECT `menu_id`,`sort` FROM `menu` WHERE ( sort='' and parentid='' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0006s ]
+SQL: UPDATE `menu` SET `menu_id`='41',`menu_name`='实验室',`parentid`='0',`menu_url`='Workshop/index',`sort`='9',`ishidden`='0' WHERE ( menu_id='41' ) [ RunTime:0.0050s ]
+
+[ 2016-05-12T11:46:28+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Menu/ajaxIndex?limit=15&offset=0&sort=id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0005s ]
+SQL: SELECT `menu_id`,`menu_name`,`parentid`,`menu_url`,`sort`,`ishidden` FROM `menu` WHERE ( parentid=0 ) ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T11:46:29+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Menu/childAjaxIndex?limit=15&offset=0&sort=id&order=desc&menu_id=41&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0005s ]
+SQL: SELECT `menu_id`,`menu_name`,`parentid`,`menu_url`,`sort`,`ishidden` FROM `menu` WHERE ( parentid='41' ) ORDER BY sort asc  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: parentid /var/www/html/yisheng/webframe/Admin/Controller/MenuController.class.php 第 132 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T11:46:48+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Menu/insert
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000595s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0006s ]
+SQL: SELECT `menu_id`,`sort` FROM `menu` WHERE ( sort='1' and parentid='41' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0005s ]
+SQL: INSERT INTO `menu` (`parentid`,`menu_name`,`menu_url`,`sort`,`ishidden`) VALUES ('41','实验室管理','Workshop/index','1','0') [ RunTime:0.0072s ]
+
+[ 2016-05-12T11:46:48+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Menu/childAjaxIndex?limit=15&offset=0&sort=id&order=desc&menu_id=41&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000397s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0005s ]
+SQL: SELECT `menu_id`,`menu_name`,`parentid`,`menu_url`,`sort`,`ishidden` FROM `menu` WHERE ( parentid='41' ) ORDER BY sort asc  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: parentid /var/www/html/yisheng/webframe/Admin/Controller/MenuController.class.php 第 132 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T11:47:04+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Workshop/index
+ERR: 模板不存在:/var/www/html/yisheng/webframe/Admin/View/Workshop/index.html
+
+[ 2016-05-12T11:47:50+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T13:43:44+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/LecDuty/ajaxIndex?limit=15&offset=0&sort=lec_duty_ano.lec_duty_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0005s ]
+SQL: SELECT cate.cate_name,lec_duty_ano.isenable,lec_duty_ano.lec_duty_id FROM `category` `cate`,`lec_duty` `lec_duty_ano` WHERE ( cate.cate_id=lec_duty_ano.cate_id ) ORDER BY lec_duty_ano.lec_duty_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` `cate`,`lec_duty` `lec_duty_ano` WHERE ( cate.cate_id=lec_duty_ano.cate_id ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T13:46:22+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Workflow/ajaxIndex?limit=15&offset=0&sort=workflow_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0005s ]
+SQL: SELECT `workflow_id`,`workflow_name`,`workflow_desc`,`steps` FROM `workflow` ORDER BY workflow_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `workflow` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T13:46:23+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T13:48:29+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T13:48:30+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T13:48:43+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T13:55:43+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T13:55:48+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T13:56:06+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Cate/getCateTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `category` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `category` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `category` WHERE ( parentid='9' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `category` WHERE ( parentid='16' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `category` WHERE ( parentid='17' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="19" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `category` WHERE ( parentid='11' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="22" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `category` WHERE ( parentid='22' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="23" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="24" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="25" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `category` WHERE ( parentid="26" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T13:56:08+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T14:01:38+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/File/ajaxIndex?limit=15&offset=0&sort=file_id&order=Asc&file_type=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `file` `file`,`user_account` `user_act` WHERE ( file.create_by=user_act.user_account_id ) ORDER BY file_id Asc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `file` `file`,`user_account` `user_act` WHERE ( file.create_by=user_act.user_account_id ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `user_account` FROM `user_account` WHERE ( user_account_id='14' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_account` FROM `user_account` WHERE ( user_account_id='14' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_account` FROM `user_account` WHERE ( user_account_id='14' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_account` FROM `user_account` WHERE ( user_account_id='14' )  [ RunTime:0.0002s ]
+
+[ 2016-05-12T14:41:25+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T14:42:05+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T14:42:11+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T14:42:28+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000741s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001114s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T14:42:32+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T14:43:50+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T14:49:53+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T14:50:16+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T14:50:20+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T14:53:54+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T14:53:59+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:05:26+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:05:30+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:09:58+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:10:01+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:10:40+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:10:45+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:12:35+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000998s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:14:30+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:14:35+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:17:13+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:17:16+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:19:14+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:19:18+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:20:58+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:21:02+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:23:14+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:23:18+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:24:05+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/File/ajaxIndex?limit=15&offset=0&sort=file_id&order=Asc&file_type=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `file` `file`,`user_account` `user_act` WHERE ( file.create_by=user_act.user_account_id ) ORDER BY file_id Asc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `file` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `file` `file`,`user_account` `user_act` WHERE ( file.create_by=user_act.user_account_id ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `user_account` FROM `user_account` WHERE ( user_account_id='14' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_account` FROM `user_account` WHERE ( user_account_id='14' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_account` FROM `user_account` WHERE ( user_account_id='14' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_account` FROM `user_account` WHERE ( user_account_id='14' )  [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:26:02+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:26:06+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:27:52+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:27:57+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:28:29+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGiveUpload
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: UPDATE `organization` SET `org_english_name`='innovation',`org_idea`='u创新',`org_icon`='wea',`org_location`='二教流程',`org_phone`='0',`org_email`='',`org_college_id`='14',`org_content`='阿斯顿发' WHERE ( org_id='8' ) [ RunTime:0.0072s ]
+
+[ 2016-05-12T15:28:29+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:30:09+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:30:57+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:33:20+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000725s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:33:23+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:33:40+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/getOrgTree
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='0' and ishidden=0 )  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="8" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='8' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="9" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="10" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="11" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="12" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="13" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `organization` WHERE ( parentid='13' and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="14" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="15" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="16" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="17" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid="18" and ishidden=0 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-12T15:33:43+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Org/infoGive/org_id/
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2016-05-12T15:33:55+08:00 ] 111.196.132.217 /yisheng/webframe/index.php/Admin/Workshop/index
+ERR: 模板不存在:/var/www/html/yisheng/webframe/Admin/View/Workshop/index.html
+

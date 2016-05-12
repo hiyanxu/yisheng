@@ -1,0 +1,330 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+	<head>
+		<title>组织机构管理</title>
+		<link rel="stylesheet" type="text/css" href="<?php echo (WWW_PUB); ?>/Public/Admin/BootStrap/css/bootstrap.min.css">
+			<!--js文件引入-->
+		<script type="text/javascript" src="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/js/jquery-1.11.1.min.js"></script>		
+		<script type="text/javascript" src="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/js/bootstrap-table.js"></script>
+		<script type="text/javascript" src="<?php echo (WWW_PUB); ?>Public/Admin/layer/layer.js"></script>
+
+		<!--树形插件引入-->
+		<script type="text/javascript" src="<?php echo (WWW_PUB); ?>Public/Admin/treeview/js/bootstrap-treeview.js"></script>
+		<link type="text/css" rel="stylesheet" href="<?php echo (WWW_PUB); ?>Public/Admin/treeview/css/bootstrap-treeview.css"/>	
+	</head>
+	<body>
+		<div class="page-content">
+			<div class="main-container container-fluid">
+				<div id="headshow">
+					<button type="button" style="margin-left:30px;" class="btn btn-success btn-sm" onclick="add();"><i class="glyphicon glyphicon-plus"></i>添加组织机构</button>
+					
+				</div>
+			</div>
+			<div id="fenLeiTree" class="test" style="margin-left:30px;"></div>
+		</div>
+
+		<!--自定义js-->
+		<script type="text/javascript">
+		load();
+
+		/*加载信息的方法*/
+		function load(){
+			var result="";
+			var actionUrl="/yisheng/webframe/index.php/Admin/Org/getOrgTree";
+			$.ajax({
+				type:"post",
+				url:actionUrl,
+				async: false,  //设置ajax同步执行，异步执行时第一时间获取不到数据
+				success:function(jsonReturn){
+					result=jsonReturn;
+				},
+				error:function(data){
+					layer.msg("信息加载失败，请重试！",{icon:2,time:1500});
+				}
+			});
+			$("#fenLeiTree").treeview({
+				color:"#428bca",
+				showBorder:!1,
+				data:result
+			});
+
+		}
+
+		/*
+		添加分类的方法
+		最顶级分类的添加
+		*/
+		function add(){
+			var index=layer.open({
+					type:2,
+					skin:"demo-class",
+					title:["分类组织机构","font-size:14px;background:#2b9af6;color:#fff"],
+					move:".layui-layer-title",
+					area:["500px","400px"],
+					shade:[0.5,"#000"],
+					shadeClose:true,
+					shift:0,
+					content:["/yisheng/webframe/index.php/Admin/Org/add","no"],
+					btn:['确定','取消'],
+					yes:function(index){
+						var obj=layer.getChildFrame("#wt-forms",index);
+						var name=obj.find("#org_name").val();
+						if(name==""){
+							layer.msg("机构名称不能为空",{icon:2,time:1500,skin:"layer-ext-moon"});
+							return;
+						}
+						var actionUrl="/yisheng/webframe/index.php/Admin/Org/insert";
+						$.ajax({
+							type:"post",
+							url:actionUrl,
+							data:obj.serialize(),
+							cache:false,
+							success:function(data){
+								if(data.status){
+									layer.msg(data.msg,{
+										icon:1,
+										time:1500,
+										skin:'layer-ext-moon'
+									});
+									layer.close(index);
+									load();
+								}
+								else{
+									layer.msg(data.msg,{
+										icon:3,
+										time:1500,
+										skin:'layer-ext-moon'
+									});
+								}
+							},
+							error:function(data){
+
+							}
+						});
+					}
+
+				});
+		}
+
+		/*
+		添加子类的方法
+		*/
+		function addChild(fid){
+			var index=layer.open({
+				type:2,
+				skin:"demo-class",
+				title:["分支子机构添加","font-size:14px;background:#2b9af6;color:#fff"],
+				move:".layui-layer-title",
+				area:["500px","400px"],
+				shade:[0.5,"#000"],
+				shadeClose:true,
+				shift:0,
+				content:['/yisheng/webframe/index.php/Admin/Org/addChild/fid/'+fid,'no'],
+				btn:['确定','取消'],
+				yes:function(index){
+					var obj=layer.getChildFrame("#wt-forms",index);
+						var name=obj.find("#org_name").val()
+						if(name==""){
+							layer.msg("机构名称不能为空",{icon:2,time:1500,skin:"layer-ext-moon"});
+							return;
+						}
+						var actionUrl="/yisheng/webframe/index.php/Admin/Org/insert";
+						$.ajax({
+							type:"post",
+							url:actionUrl,
+							data:obj.serialize(),
+							cache:false,
+							success:function(data){
+								if(data.status){
+									layer.msg(data.msg,{
+										icon:1,
+										time:1500,
+										skin:'layer-ext-moon'
+									});
+									layer.close(index);
+									load();
+								}
+								else{
+									layer.msg(data.msg,{
+										icon:3,
+										time:1500,
+										skin:'layer-ext-moon'
+									});
+								}
+							},
+							error:function(data){
+
+							}
+						});
+				}
+			});
+		}
+
+		/*
+		修改操作
+		*/
+		function editChild(org_id){
+			var index=layer.open({
+				type:2,
+				skin:"demo-class",
+				title:["机构修改","font-size:14px;color:black;"],
+				move:".layui-layer-title",
+				area:["500px","400px"],
+				shade:[0.5,"#000"],
+				shadeClose:true,
+				shift:0,
+				content:['/yisheng/webframe/index.php/Admin/Org/edit/org_id/'+org_id],
+				btn:['确定','取消'],
+				yes:function(index){
+					var obj=layer.getChildFrame("#wt-forms",index);
+						var name=obj.find("#org_name").val()
+						if(name==""){
+							layer.msg("机构名称不能为空",{icon:2,time:1500,skin:"layer-ext-moon"});
+							return;
+						}
+						var actionUrl="/yisheng/webframe/index.php/Admin/Org/update";
+						$.ajax({
+							type:"post",
+							url:actionUrl,
+							data:obj.serialize(),
+							cache:false,
+							success:function(data){
+								if(data.status){
+									layer.msg(data.msg,{
+										icon:1,
+										time:1500,
+										skin:'layer-ext-moon'
+									});
+									layer.close(index);
+									load();
+								}
+								else{
+									layer.msg(data.msg,{
+										icon:3,
+										time:1500,
+										skin:'layer-ext-moon'
+									});
+								}
+							},
+							error:function(data){
+
+							}
+						});
+				}
+			});
+		}
+
+		/*
+		删除操作
+		*/
+		function delChild(org_id){
+			layer.confirm("确定要删除吗?",{btn:["确定","取消"]},function(index,layero){
+					var actionUrl="/yisheng/webframe/index.php/Admin/Org/del";
+					$.ajax({
+						type:"post",
+						url:actionUrl,
+						data:{"org_id":org_id},
+						cache:false,
+						success:function(data){
+							
+							if(data.status){
+								layer.msg(data.msg,{icon:1,time:1000});
+								layer.close(index);
+								load();
+							}
+							else{
+								layer.msg(data.msg,{icon:2,time:1000});
+								layer.close(index);
+								load();
+							}
+						},
+						error:function(data){
+							layer.alert(index);
+						}
+					});
+			});
+		}
+
+		/*
+		信息完善操作
+		*/
+		function infoGiveChild(org_id){
+			var index=layer.open({
+				type:2,
+				skin:"demo-class",
+				title:["信息完善","font-size:14px;background:#2b9af6;color:#fff"],
+				move:".layui-layer-title",
+				area:["100%","100%"],
+				shade:[0.5,"#000"],
+				shadeClose:true,
+				shift:0,
+				content:['/yisheng/webframe/index.php/Admin/Org/infoGive/org_id/'+org_id],
+				btn:['确定','取消'],
+				yes:function(index){
+					var obj=layer.getChildFrame("#wt-forms",index);
+						var org_english_name=obj.find("#org_english_name").val();
+						var org_idea=obj.find("#org_idea").val();
+						var org_phone=obj.find("#org_phone").val();
+						var org_email=obj.find("#org_email").val();
+						if(org_english_name==""||org_idea==""){
+							layer.msg("机构名称不能为空",{icon:2,time:1500,skin:"layer-ext-moon"});
+							return;
+						}
+						var re_phone=/^1\d{10}$/;  //正则表达式，以1开头，匹配10个数字
+						if(org_phone!=""&&!re_phone.test(org_phone)){
+							layer.msg("手机格式错误", {
+											icon: 2,
+												time: 1500,
+												skin: 'layer-ext-moon'
+											});
+							return;
+						}
+						var re_email=/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+						if(org_email!=""&&!re_email.test(org_email)){
+							layer.msg("邮箱格式错误", {
+											icon: 2,
+												time: 1500,
+												skin: 'layer-ext-moon'
+											});
+							return;
+						}
+						var actionUrl="/yisheng/webframe/index.php/Admin/Org/infoGiveUpload";
+						$.ajax({
+							type:"post",
+							url:actionUrl,
+							data:obj.serialize(),
+							cache:false,
+							success:function(data){
+								if(data.status){
+									layer.msg(data.msg,{
+										icon:1,
+										time:1500,
+										skin:'layer-ext-moon'
+									});
+									layer.close(index);
+									load();
+								}
+								else{
+									layer.msg(data.msg,{
+										icon:3,
+										time:1500,
+										skin:'layer-ext-moon'
+									});
+								}
+							},
+							error:function(data){
+
+							}
+						});
+				}
+			});
+		}
+
+
+		</script>
+
+
+
+	</body>
+</html>

@@ -168,7 +168,7 @@
 			var index=layer.open({
 				type:2,
 				skin:"demo-class",
-				title:["机构修改","font-size:14px;background:#2b9af6;color:#fff"],
+				title:["机构修改","font-size:14px;color:black;"],
 				move:".layui-layer-title",
 				area:["500px","400px"],
 				shade:[0.5,"#000"],
@@ -243,6 +243,81 @@
 							layer.alert(index);
 						}
 					});
+			});
+		}
+
+		/*
+		信息完善操作
+		*/
+		function infoGiveChild(org_id){
+			var index=layer.open({
+				type:2,
+				skin:"demo-class",
+				title:["信息完善","font-size:14px;background:#2b9af6;color:#fff"],
+				move:".layui-layer-title",
+				area:["100%","100%"],
+				shade:[0.5,"#000"],
+				shadeClose:true,
+				shift:0,
+				content:['__URL__/infoGive/org_id/'+org_id],
+				btn:['确定','取消'],
+				yes:function(index){
+					var obj=layer.getChildFrame("#wt-forms",index);
+						var org_english_name=obj.find("#org_english_name").val();
+						var org_idea=obj.find("#org_idea").val();
+						var org_phone=obj.find("#org_phone").val();
+						var org_email=obj.find("#org_email").val();
+						if(org_english_name==""||org_idea==""){
+							layer.msg("机构名称不能为空",{icon:2,time:1500,skin:"layer-ext-moon"});
+							return;
+						}
+						var re_phone=/^1\d{10}$/;  //正则表达式，以1开头，匹配10个数字
+						if(org_phone!=""&&!re_phone.test(org_phone)){
+							layer.msg("手机格式错误", {
+											icon: 2,
+												time: 1500,
+												skin: 'layer-ext-moon'
+											});
+							return;
+						}
+						var re_email=/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+						if(org_email!=""&&!re_email.test(org_email)){
+							layer.msg("邮箱格式错误", {
+											icon: 2,
+												time: 1500,
+												skin: 'layer-ext-moon'
+											});
+							return;
+						}
+						var actionUrl="__URL__/infoGiveUpload";
+						$.ajax({
+							type:"post",
+							url:actionUrl,
+							data:obj.serialize(),
+							cache:false,
+							success:function(data){
+								if(data.status){
+									layer.msg(data.msg,{
+										icon:1,
+										time:1500,
+										skin:'layer-ext-moon'
+									});
+									layer.close(index);
+									load();
+								}
+								else{
+									layer.msg(data.msg,{
+										icon:3,
+										time:1500,
+										skin:'layer-ext-moon'
+									});
+								}
+							},
+							error:function(data){
+
+							}
+						});
+				}
 			});
 		}
 
