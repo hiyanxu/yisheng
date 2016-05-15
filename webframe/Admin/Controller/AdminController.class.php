@@ -59,12 +59,11 @@ class AdminController extends Controller{
 								$fun_name=ACTION_NAME;
 								$url=$con_name."/".$fun_name;
 								$access_urls=session("access_urls");  //将所有目前session中的权限获取出来
-								
 								//echo "<script>alert('".$url."')</script>";
 								if($fun_name!="ajaxIndex"){				
 
 									//echo "<script>alert('".$url."')</script>";
-									if($url=="Index/index"||$url=="Index/head"||$url=="Index/left"||$url=="Index/right"||$url="Index/logout"){  //我们默认给出显示首页的三个方法的权限
+									if($url=="Index/index"||$url=="Index/head"||$url=="Index/left"||$url=="Index/right"||$url=="Index/logout"){  //我们默认给出显示首页的三个方法的权限
 										
 									}
 									else{
@@ -115,7 +114,7 @@ class AdminController extends Controller{
 									if($fun_name!="ajaxIndex"){				
 
 										//echo "<script>alert('".$url."')</script>";
-										if($url=="Index/index"||$url=="Index/head"||$url=="Index/left"||$url=="Index/right"||$url="Index/logout"){  //我们默认给出显示首页的三个方法的权限
+										if($url=="Index/index"||$url=="Index/head"||$url=="Index/left"||$url=="Index/right"||$url=="Index/logout"){  //我们默认给出显示首页的三个方法的权限
 											
 										}
 										else{

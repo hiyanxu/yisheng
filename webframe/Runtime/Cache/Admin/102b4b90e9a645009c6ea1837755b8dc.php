@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 	<head>
 		<title>角色列表页</title>
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
-		<link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}/Public/Admin/BootStrap/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}Public/Admin/BootStrap/css/bootstrap-table.min.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo (WWW_PUB); ?>/Public/Admin/BootStrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/css/bootstrap-table.min.css">
 		
 		<!--js文件引入-->
-		<script type="text/javascript" src="{$Think.const.WWW_PUB}Public/Admin/BootStrap/js/jquery-1.11.1.min.js"></script>		
-		<script type="text/javascript" src="{$Think.const.WWW_PUB}Public/Admin/BootStrap/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="{$Think.const.WWW_PUB}Public/Admin/BootStrap/js/bootstrap-table.js"></script>
-		<script type="text/javascript" src="{$Think.const.WWW_PUB}Public/Admin/layer/layer.js"></script>
+		<script type="text/javascript" src="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/js/jquery-1.11.1.min.js"></script>		
+		<script type="text/javascript" src="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/js/bootstrap-table.js"></script>
+		<script type="text/javascript" src="<?php echo (WWW_PUB); ?>Public/Admin/layer/layer.js"></script>
 	</head>
 	<body>
 		<div id="page-content">
@@ -30,7 +30,7 @@
 	$('#table').bootstrapTable({
 					classes: "table table-hover", //表的样式'table-no-bordered'无边宽，也可以自己加样式
 					method: 'get',
-					url: "__URL__/ajaxIndex",
+					url: "/yisheng/webframe/index.php/Admin/Role/ajaxIndex",
 					//cache: false,
 					height: $(window).height(),
 					striped: true, //是否显示条纹的行。
@@ -153,13 +153,13 @@
 						//closeBtn:2,
 						// time:1000,  设置自动关闭窗口时间 1秒=1000；
 						shift: 3, //打开效果：0-6 。0放大，1从上到下，2下到上，3左到右放大，4翻滚效果；5渐变；6抖窗口
-						content: ['__URL__/add', 'no'],
+						content: ['/yisheng/webframe/index.php/Admin/Role/add', 'no'],
 						btn: ['确定', '取消']
 						, yes: function (index) {
 						var obj = layer.getChildFrame('#wt-forms', index); //获取form的值
 								$.ajax({
 									type: 'post',
-									url: '__URL__/insert',
+									url: '/yisheng/webframe/index.php/Admin/Role/insert',
 									data: obj.serialize(),
 									cache: false,
 									success: function (data) {
@@ -206,14 +206,14 @@
 						//closeBtn:2,
 						// time:1000,  设置自动关闭窗口时间 1秒=1000；
 						shift: 0, //打开效果：0-6 。0放大，1从上到下，2下到上，3左到右放大，4翻滚效果；5渐变；6抖窗口
-						content: ['__URL__/edit/role_id/'+role_id, 'no'],
+						content: ['/yisheng/webframe/index.php/Admin/Role/edit/role_id/'+role_id, 'no'],
 						btn: ['确定', '取消']
 						, yes: function (index) {
 
 						var obj = layer.getChildFrame('#wt-forms', index); //获取form的值
 								$.ajax({
 									type: 'post',
-									url: '__URL__/update',
+									url: '/yisheng/webframe/index.php/Admin/Role/update',
 									data: obj.serialize(),
 									cache: false,
 									success: function (data) {
@@ -262,7 +262,7 @@
 						var ids = role_id + ',';
 					}
 
-					var actionUrl = "__URL__/del";
+					var actionUrl = "/yisheng/webframe/index.php/Admin/Role/del";
 						$.ajax({
 						type: 'post',
 								url: actionUrl,
@@ -299,13 +299,13 @@
 						//closeBtn:2,
 						// time:1000,  设置自动关闭窗口时间 1秒=1000；
 						shift: 3, //打开效果：0-6 。0放大，1从上到下，2下到上，3左到右放大，4翻滚效果；5渐变；6抖窗口
-						content: ['__URL__/accessDis/role_id/'+role_id, 'yes'],
+						content: ['/yisheng/webframe/index.php/Admin/Role/accessDis/role_id/'+role_id, 'yes'],
 						btn: ['确定', '取消']
 						, yes: function (index) {
 						var obj = layer.getChildFrame('#wt-forms', index); //获取form的值
 								$.ajax({
 									type: 'post',
-									url: '__URL__/accessDisInsert',
+									url: '/yisheng/webframe/index.php/Admin/Role/accessDisInsert',
 									data: obj.serialize(),
 									cache: false,
 									success: function (data) {
@@ -341,7 +341,7 @@
 	菜单分配操作
 	*/
 	function menuDis(role_id){
-		window.location.href="__URL__/menuDis/role_id/"+role_id;
+		window.location.href="/yisheng/webframe/index.php/Admin/Role/menuDis/role_id/"+role_id;
 	}
 
 
@@ -359,14 +359,14 @@
 						//closeBtn:2,
 						// time:1000,  设置自动关闭窗口时间 1秒=1000；
 						shift: 3, //打开效果：0-6 。0放大，1从上到下，2下到上，3左到右放大，4翻滚效果；5渐变；6抖窗口
-						content: ['__URL__/menuDis/role_id/'+role_id, 'yes'],
+						content: ['/yisheng/webframe/index.php/Admin/Role/menuDis/role_id/'+role_id, 'yes'],
 						btn: ['确定', '取消']
 						, yes: function (index) {
 						var obj = layer.getChildFrame('#wt-forms', index); //获取form的值
 						if(check(obj,true)){
 								$.ajax({
 									type: 'post',
-									url: '__URL__/menuDisInsert',
+									url: '/yisheng/webframe/index.php/Admin/Role/menuDisInsert',
 									data: obj.serialize()+"&menuString"+menuString,
 									cache: false,
 									success: function (data) {

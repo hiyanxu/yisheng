@@ -41,78 +41,43 @@
         <div>
             <div class="modal-body">
                 <form id="wt-forms" method="post" tabindex="-1" onsubmit="return false;" class="form-horizontal">
-                    <input type="hidden" value="{$org_row[0]['org_id']}" name="org_id">
+                    <input type="hidden" value="{$lec_id}" name="lec_id">
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">英文名称：</label>
+                        <label class="col-xs-3 control-label">讲座名称</label>
                         <div class="col-xs-8">
-                            <input type="text" id="org_english_name" value="{$org_row[0]['org_english_name']}" name="org_english_name" placeholder="请给出英文名称" class="form-control input-sm"> 
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">负责人：</label>
-                        <div class="col-xs-8">
-                            <select name="org_user_id">
-                                <foreach name="user_rows" key="k" item="user_row">
-                                    <option value="{$user_row['user_id']}" <if condition="$org_row[0]['org_user_id'] eq $user_row['user_id']">selected='selected'</if>>{$user_row['user_name']}</option>
-                                </foreach>
-                            </select>
+                            <label>{$row[0]['lec_name']}</label>
                         </div>
                     </div>
                     
                      <div class="form-group">
-                        <label class="col-xs-3 control-label">理念宗旨：</label>
+                        <label class="col-xs-3 control-label">新闻链接：</label>
                         <div class="col-xs-8">
-                            <input type="text" id="org_idea" name="org_idea" value="{$org_row[0]['org_idea']}" placeholder="请给出理念机构理念宗旨" class="form-control input-sm"> 
+                            <input type="text" id="lec_link" name="lec_link" value="{$row[0]['lec_link']}" placeholder="请输入新闻链接" class="form-control input-sm"> 
                         </div>
                     </div>
                     <div id="file_upload" class="form-group">
-                        <label class="col-xs-3 control-label">logo：</label>
+                        <label class="col-xs-3 control-label">新闻图片：</label>
                         <div id="divupload0">
                             <div style="float:left;">
-                                <input type="text" value="{$org_row[0]['org_icon']}"  name ="org_icon" id="org_icon" class="input-xlarge"/>   
+                                <input type="text" value="{$row[0]['lec_thumb']}"  name ="lec_thumb" id="lec_thumb" class="input-xlarge"/>   
+                            </div>
+                            <div style="float:left;">
+                                <i id="pickfiles2"></i>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="file_upload" class="form-group">
+                        <label class="col-xs-3 control-label">ppt：</label>
+                        <div id="divupload0">
+                            <div style="float:left;">
+                                <input type="text" value="{$row[0]['lec_ppt']}"  name ="lec_ppt" id="lec_ppt" class="input-xlarge"/>   
                             </div>
                             <div style="float:left;">
                                 <i id="pickfiles"></i>  
                             </div>
                         </div>
-                    </div>
-                     <div class="form-group">
-                        <label class="col-xs-3 control-label">地理位置：</label>
-                        <div class="col-xs-8">
-                            <input type="text" id="org_location" value="{$org_row[0]['org_location']}" name="org_location" placeholder='地理位置' class="form-control input-sm"> 
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">联系电话：</label>
-                        <div class="col-xs-8">
-                            <input type="phone" id="org_phone" name="org_phone" <if condition="$org_row[0]['org_phone'] eq 0">value=''<else/>value="{$org_row[0]['org_phone']}"</if> class="form-control input-sm"> 
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">联系邮箱：</label>
-                        <div class="col-xs-8">
-                            <input type="email" id="org_email" value="{$org_row[0]['org_email']}" name="org_email" class="form-control input-sm"> 
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">上级单位：</label>
-                        <div class="col-xs-8">
-                            <select name="org_college_id">
-                                <foreach name="org_college_rows" key="k" item="org_college_row">
-                                    <option value="{$k}" <if condition="$org_row[0]['org_college_id'] eq $k">selected='selected'</if>>{$org_college_row}</option>
-                                </foreach>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">简介：</label>
-                        <div class="col-xs-8">
-                            <textarea name="org_content" id="org_content" plcaeholder="请给出简介">{$org_row[0]['org_content']}</textarea>
-                        </div>
-                    </div>
+                    </div>                    
 
 
                 </form>
@@ -122,7 +87,7 @@
      <!--上传部分js代码-->
         <script type="text/javascript">
         $(function(){
-                        fileext="*.jpg;*.gif;*.jpeg;*.png";
+                        fileext="*.jpg;*.gif;*.jpeg;*.png;*.ppt";
                         fileDesc="请选择图像文件";
                         upload_init(fileext,fileDesc);
                     
@@ -163,7 +128,106 @@
                     var status = data.status;
                     alert(status);
                     if(status){
-                        $('#org_icon').val(data.name);
+                        $('#lec_link').val(data.name);
+                    }
+                    if (status == false)
+                    {
+                        $.weitac.alert('上传失败，' + data.msg, 0);
+                    }
+                },
+                'onUploadError': function(file, errorCode, errorMsg) {
+                    alert(errorMsg);alert(errorCode);
+                },
+                // 模版的设置
+
+                // 不显示模版，通过事件来显示文件
+                //'itemTemplate' : '',
+
+                // --------------------------------------------------------------------------------  一些事件
+
+               /* // 动态设置有问题，再研究
+                'onUploadStart': function(file) {
+                    //$("#file_upload").uploadify("settings", "uploadUserId", '3333');
+                },
+                // 失败执行的函数 报错！！
+                'onUploadError': function(file, errorCode, errorMsg) {
+                    //alert('上传错误，请重新再试!');
+                },*/
+                // 上传成功一个文件后 执行的事件  data 为 PHP echo输出的内容  response为true 上传成功 false上传失败
+                /*'onUploadSuccess': function(file, data, response) {
+                    alert("成功了！");
+                    var data = $.parseJSON(data);
+                    alert(data);
+                    var status = data.status;
+                    $('#thumb').val("/"+data.info.filepath+data.info.filename);
+
+                    if (status == false)
+                    {
+                        $.weitac.alert('上传失败，' + data.msg, 0);
+                    }
+                },
+                // 上传完毕 调用的函数 uploadsSuccessful成功的文件数量  uploadsErrored失败的文件数量
+                'onQueueComplete': function(queueData) {
+
+                    // $.weitac.tableRefresh(wt);
+                    // alert(queueData.uploadsSuccessful + ' 个文件上传成功.' + queueData.uploadsErrored + '个文件上传失败.');
+                },
+                // 每添加一个文件至上传队列时触发该事件
+                'onSelect': function(file) {
+                    // alert(file.name + ' 文件添加至上传队列.');
+                },
+                'onSelectError': function(file, errorCode, errorMsg) {
+
+                    if (errorCode == SWFUpload.QUEUE_ERROR.QUEUE_LIMIT_EXCEEDED) {
+                        this.queueData.errorMsg = "上传的文件数过多"
+                    }
+
+                    if (errorCode == SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT) {
+                        this.queueData.errorMsg = "文件太大了"
+                    }
+
+                    if (errorCode == SWFUpload.QUEUE_ERROR.ZERO_BYTE_FILE) {
+                        this.queueData.errorMsg = "不能传空文件"
+                    }
+
+                    if (errorCode == SWFUpload.QUEUE_ERROR.INVALID_FILETYPE) {
+                        this.queueData.errorMsg = "文件类型不正确"
+                    }
+                },
+                // 每一个文件上传完成都会触发该事件，不管是上传成功还是上传失败
+                'onUploadComplete': function(file) {
+                    //alert(file.name + ' 文件上传完成.');
+                }*/
+            });
+
+            $('#pickfiles2').uploadify({
+                'debug': false,
+                'method': 'post',
+                'swf': "{$Think.const.WWW_PUB}Public/Admin/uploadify/uploadify.swf", //    swf 地址
+                'uploader': '__URL__/uploader', // 服务器端处理程序                
+                'wmode': 'transparent', //使浏览按钮的flash背景文件透明
+                'buttonText': '选择',
+                'formData': {
+                    'timestamp': '<?php echo $timestamp;?>',
+                    'token': '<?php echo md5('unique_salt' . $timestamp);?>',
+                    "session_id":sid
+                },
+                'height': 35,
+                'width': 50,
+                'preventCaching': true, // true不缓存 false缓存
+                'fileTypeExts':fileext,
+                'fileTypeDesc': fileDesc,
+                //'removeTimeout' : 3,          // 上传完成后 移除的时间
+                //'queueSizeLimit' : 10,            // 上传队列中一次可容纳的最大条数。该选项不限制上传文件数量。限制上传文件数量，使用uploadlimit选项。如果上传队列中的数量超过此限制，则触发onselecterror事件。 
+                //'successTimeout' : 3600,      // 成功等待时间？
+                'uploadLimit': 10, // 定义允许的最大上传数量。当达到或者超过该数值时，将触发 onSelectError事件。 
+                'multi': true,
+                'onUploadSuccess': function(file, data, response) {
+                    var data = $.parseJSON(data);
+                    var status = data.status;
+                    alert(status);
+                    if(status){
+                        $('#lec_thumb').val(data.name);
                     }
                     if (status == false)
                     {

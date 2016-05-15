@@ -23,7 +23,7 @@
         <!--kindeditor-->
         <script type="text/javascript">
         KindEditor.ready(function(K) {
-                    var editor1=K.create('textarea[name="org_content"]',{
+                    var editor1=K.create('textarea[name="open_content"]',{
                         cssPath : '<?php echo (WWW_PUB); ?>Public/Admin/kindeditor-4.1.10/plugins/code/prettify.css',
                         uploadJson : '<?php echo (WWW_PUB); ?>Public/Admin/kindeditor-4.1.10/php/upload_json.php',
                         fileManagerJson : '<?php echo (WWW_PUB); ?>Public/Admin/kindeditor-4.1.10/php/file_manager_json.php',
@@ -41,81 +41,72 @@
         <div>
             <div class="modal-body">
                 <form id="wt-forms" method="post" tabindex="-1" onsubmit="return false;" class="form-horizontal">
-                    <input type="hidden" value="<?php echo ($org_row[0]['org_id']); ?>" name="org_id">
+                    <input type="hidden" value="0" name="parentid">
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">英文名称：</label>
+                        <label class="col-xs-3 control-label">开放日主题：</label>
                         <div class="col-xs-8">
-                            <input type="text" id="org_english_name" value="<?php echo ($org_row[0]['org_english_name']); ?>" name="org_english_name" placeholder="请给出英文名称" class="form-control input-sm"> 
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">负责人：</label>
-                        <div class="col-xs-8">
-                            <select name="org_user_id">
-                                <?php if(is_array($user_rows)): foreach($user_rows as $k=>$user_row): ?><option value="<?php echo ($user_row['user_id']); ?>" <?php if($org_row[0]['org_user_id'] == $user_row['user_id']): ?>selected='selected'<?php endif; ?>><?php echo ($user_row['user_name']); ?></option><?php endforeach; endif; ?>
-                            </select>
+                            <input type="text" id="open_theme" name="open_theme" placeholder="请给出开放日主题" class="form-control input-sm"> 
                         </div>
                     </div>
                     
-                     <div class="form-group">
-                        <label class="col-xs-3 control-label">理念宗旨：</label>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">开始时间：</label>
                         <div class="col-xs-8">
-                            <input type="text" id="org_idea" name="org_idea" value="<?php echo ($org_row[0]['org_idea']); ?>" placeholder="请给出理念机构理念宗旨" class="form-control input-sm"> 
+                            <input type="text" id="open_start" name="open_start" onclick="WdatePicker()" placeholder="请单击" class="form-control input-sm"> 
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">结束时间：</label>
+                        <div class="col-xs-8">
+                            <input type="text" id="open_end" name="open_end" onclick="WdatePicker()" placeholder="请单击" class="form-control input-sm"> 
+                        </div>
+                    </div>
+                    
                     <div id="file_upload" class="form-group">
-                        <label class="col-xs-3 control-label">logo：</label>
+                        <label class="col-xs-3 control-label">海报：</label>
                         <div id="divupload0">
                             <div style="float:left;">
-                                <input type="text" value="<?php echo ($org_row[0]['org_icon']); ?>"  name ="org_icon" id="org_icon" class="input-xlarge"/>   
+                                <input type="text"  name ="open_thumb" id="open_thumb" class="input-xlarge"/>   
                             </div>
                             <div style="float:left;">
                                 <i id="pickfiles"></i>  
                             </div>
                         </div>
                     </div>
-                     <div class="form-group">
-                        <label class="col-xs-3 control-label">地理位置：</label>
-                        <div class="col-xs-8">
-                            <input type="text" id="org_location" value="<?php echo ($org_row[0]['org_location']); ?>" name="org_location" placeholder='地理位置' class="form-control input-sm"> 
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">联系电话：</label>
-                        <div class="col-xs-8">
-                            <input type="phone" id="org_phone" name="org_phone" <?php if($org_row[0]['org_phone'] == 0): ?>value=''<?php else: ?>value="<?php echo ($org_row[0]['org_phone']); ?>"<?php endif; ?> class="form-control input-sm"> 
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">联系邮箱：</label>
-                        <div class="col-xs-8">
-                            <input type="email" id="org_email" value="<?php echo ($org_row[0]['org_email']); ?>" name="org_email" class="form-control input-sm"> 
-                        </div>
-                    </div>
 
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">上级单位：</label>
+                        <label class="col-xs-3 control-label">开放日地点：</label>
                         <div class="col-xs-8">
-                            <select name="org_college_id">
-                                <?php if(is_array($org_college_rows)): foreach($org_college_rows as $k=>$org_college_row): ?><option value="<?php echo ($k); ?>" <?php if($org_row[0]['org_college_id'] == $k): ?>selected='selected'<?php endif; ?>><?php echo ($org_college_row); ?></option><?php endforeach; endif; ?>
+                            <input type="text" name='open_location' id="open_location" class="form-control input-sm" placeholder="请给出开放日地点">
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">承办实验室：</label>
+                        <div class="col-xs-8">
+                            <select name="open_workshop">
+                                <?php if(is_array($workshop_rows)): foreach($workshop_rows as $k=>$workshop_row): ?><option value="<?php echo ($k); ?>"><?php echo ($workshop_row); ?></option><?php endforeach; endif; ?>
                             </select>
                         </div>
                     </div>
-
+                   
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">简介：</label>
+                        <label class="col-xs-3 control-label">内容简介：</label>
                         <div class="col-xs-8">
-                            <textarea name="org_content" id="org_content" plcaeholder="请给出简介"><?php echo ($org_row[0]['org_content']); ?></textarea>
+                            <textarea name="open_content" id="open_content" plcaeholder="请给出内容"></textarea>
                         </div>
                     </div>
+
 
 
                 </form>
             </div>
         </div>
-        
-     <!--上传部分js代码-->
+
+
+
+    <!--上传部分js代码-->
         <script type="text/javascript">
         $(function(){
                         fileext="*.jpg;*.gif;*.jpeg;*.png";
@@ -136,7 +127,7 @@
                 'debug': false,
                 'method': 'post',
                 'swf': "<?php echo (WWW_PUB); ?>Public/Admin/uploadify/uploadify.swf", //    swf 地址
-                'uploader': '/yisheng/webframe/index.php/Admin/Org/uploader', // 服务器端处理程序                
+                'uploader': '/yisheng/webframe/index.php/Admin/Openday/uploader', // 服务器端处理程序                
                 'wmode': 'transparent', //使浏览按钮的flash背景文件透明
                 'buttonText': '选择',
                 'formData': {
@@ -159,7 +150,7 @@
                     var status = data.status;
                     alert(status);
                     if(status){
-                        $('#org_icon').val(data.name);
+                        $('#open_thumb').val(data.name);
                     }
                     if (status == false)
                     {
@@ -233,8 +224,6 @@
 
         }
         </script>
-
-
 
 
 

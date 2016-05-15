@@ -1,29 +1,29 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="renderer" content="webkit">
         <title>信息添加</title>
-        <link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}/Public/Admin/BootStrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}Public/Admin/BootStrap/css/bootstrap-table.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo (WWW_PUB); ?>/Public/Admin/BootStrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/css/bootstrap-table.min.css">
         <!--js文件引入-->
-        <script type="text/javascript" src="{$Think.const.WWW_PUB}Public/Admin/BootStrap/js/jquery-1.11.1.min.js"></script>     
-        <script type="text/javascript" src="{$Think.const.WWW_PUB}Public/Admin/BootStrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/js/jquery-1.11.1.min.js"></script>     
+        <script type="text/javascript" src="<?php echo (WWW_PUB); ?>Public/Admin/BootStrap/js/bootstrap.min.js"></script>
 
-        <script type="text/javascript" src="{$Think.const.WWW_PUB}Public/Admin/My97DatePicker/WdatePicker.js"></script>
-        <script src="{$Think.const.WWW_PUB}Public/Admin/kindeditor-4.1.10/kindeditor.js"></script>
-        <script src="{$Think.const.WWW_PUB}Public/Admin/kindeditor-4.1.10/lang/zh_CN.js"></script>
-        <link rel="stylesheet" href="{$Think.const.WWW_PUB}Public/Admin/kindeditor-4.1.10/plugins/code/prettify.css">
-        <script src="{$Think.const.WWW_PUB}Public/Admin/kindeditor-4.1.10/plugins/code/prettify.js"></script>
+        <script type="text/javascript" src="<?php echo (WWW_PUB); ?>Public/Admin/My97DatePicker/WdatePicker.js"></script>
+        <script src="<?php echo (WWW_PUB); ?>Public/Admin/kindeditor-4.1.10/kindeditor.js"></script>
+        <script src="<?php echo (WWW_PUB); ?>Public/Admin/kindeditor-4.1.10/lang/zh_CN.js"></script>
+        <link rel="stylesheet" href="<?php echo (WWW_PUB); ?>Public/Admin/kindeditor-4.1.10/plugins/code/prettify.css">
+        <script src="<?php echo (WWW_PUB); ?>Public/Admin/kindeditor-4.1.10/plugins/code/prettify.js"></script>
 
         <!--kindeditor-->
         <script type="text/javascript">
         KindEditor.ready(function(K) {
                     var editor1=K.create('textarea[name="lec_content"]',{
-                        cssPath : '{$Think.const.WWW_PUB}Public/Admin/kindeditor-4.1.10/plugins/code/prettify.css',
-                        uploadJson : '{$Think.const.WWW_PUB}Public/Admin/kindeditor-4.1.10/php/upload_json.php',
-                        fileManagerJson : '{$Think.const.WWW_PUB}Public/Admin/kindeditor-4.1.10/php/file_manager_json.php',
+                        cssPath : '<?php echo (WWW_PUB); ?>Public/Admin/kindeditor-4.1.10/plugins/code/prettify.css',
+                        uploadJson : '<?php echo (WWW_PUB); ?>Public/Admin/kindeditor-4.1.10/php/upload_json.php',
+                        fileManagerJson : '<?php echo (WWW_PUB); ?>Public/Admin/kindeditor-4.1.10/php/file_manager_json.php',
                         allowFileManager : true,
                         afterBlur : function(){
                             this.sync();
@@ -61,9 +61,7 @@
                         <label class="col-xs-3 control-label">主讲人职称：</label>
                         <div class="col-xs-8">
                             <select name="lec_duty">
-                                <foreach name="cate_rows" key="k" item="cate_row">
-                                    <option value="{$cate_row['cate_id']}">{$cate_row['cate_name']}</option>
-                                </foreach>
+                                <?php if(is_array($cate_rows)): foreach($cate_rows as $k=>$cate_row): ?><option value="<?php echo ($cate_row['cate_id']); ?>"><?php echo ($cate_row['cate_name']); ?></option><?php endforeach; endif; ?>
                             </select>
                         </div>
                     </div>
@@ -72,9 +70,7 @@
                         <label class="col-xs-3 control-label">主讲人学院：</label>
                         <div class="col-xs-8">
                             <select name="lec_speaker_college">
-                                <foreach name="org_rows" key="k" item="org_row">
-                                    <option value="{$org_row['org_id']}">{$org_row['org_name']}</option>
-                                </foreach>
+                                <?php if(is_array($org_rows)): foreach($org_rows as $k=>$org_row): ?><option value="<?php echo ($org_row['org_id']); ?>"><?php echo ($org_row['org_name']); ?></option><?php endforeach; endif; ?>
                             </select>
                         </div>
                     </div>
@@ -83,9 +79,7 @@
                         <label class="col-xs-3 control-label">承办实验室：</label>
                         <div class="col-xs-8">
                             <select name="lec_workshop">
-                                <foreach name="workshop_rows" key="k" item="workshop_row">
-                                    <option value="{$k}">{$workshop_row}</option>
-                                </foreach>
+                                <?php if(is_array($workshop_rows)): foreach($workshop_rows as $k=>$workshop_row): ?><option value="<?php echo ($k); ?>"><?php echo ($workshop_row); ?></option><?php endforeach; endif; ?>
                             </select>
                         </div>
                     </div>
@@ -94,9 +88,7 @@
                         <label class="col-xs-3 control-label">承办学院：</label>
                         <div class="col-xs-8">
                             <select name="lec_college">
-                                <foreach name="org_rows" key="k" item="org_row">
-                                    <option value="{$org_row['org_id']}">{$org_row['org_name']}</option>
-                                </foreach>
+                                <?php if(is_array($org_rows)): foreach($org_rows as $k=>$org_row): ?><option value="<?php echo ($org_row['org_id']); ?>"><?php echo ($org_row['org_name']); ?></option><?php endforeach; endif; ?>
                             </select>
                         </div>
                     </div>

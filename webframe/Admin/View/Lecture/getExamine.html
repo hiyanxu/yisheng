@@ -32,86 +32,79 @@
                     prettyPrint();
                 });
         </script>
-
     </head>
     <body>
         <div>
             <div class="modal-body">
                 <form id="wt-forms" method="post" tabindex="-1" onsubmit="return false;" class="form-horizontal">
-                    <input type="hidden" value="0" name="parentid">
+                    <input type="hidden" value="{$row[0]['lec_id']}" name="lec_id">
                     <div class="form-group">
                         <label class="col-xs-3 control-label">讲座名称：</label>
                         <div class="col-xs-8">
-                            <input type="text" id="lec_name" name="lec_name" placeholder="请给出讲座名称" class="form-control input-sm"> 
+                            <label>{$row[0]['lec_name']}</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-3 control-label">讲座时间：</label>
                         <div class="col-xs-8">
-                            <input type="text" id="lec_time" name="lec_time" onclick="WdatePicker()" placeholder="请单击" class="form-control input-sm"> 
+                            <label>{$row[0]['lec_time']}</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-3 control-label">主讲人：</label>
                         <div class="col-xs-8">
-                            <input type="text" name='lec_speaker' class="form-control input-sm" placeholder="请输入主讲人">
+                            <label>{$row[0]['lec_speaker']}</label>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-xs-3 control-label">主讲人职称：</label>
                         <div class="col-xs-8">
-                            <select name="lec_duty">
-                                <foreach name="cate_rows" key="k" item="cate_row">
-                                    <option value="{$cate_row['cate_id']}">{$cate_row['cate_name']}</option>
-                                </foreach>
-                            </select>
+                           <label>{$row[0]['lec_duty'][0]['cate_name']}</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-xs-3 control-label">主讲人学院：</label>
                         <div class="col-xs-8">
-                            <select name="lec_speaker_college">
-                                <foreach name="org_rows" key="k" item="org_row">
-                                    <option value="{$org_row['org_id']}">{$org_row['org_name']}</option>
-                                </foreach>
-                            </select>
+                            <label>{$row[0]['lec_speaker_college'][0]['org_name']}</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-xs-3 control-label">承办实验室：</label>
                         <div class="col-xs-8">
-                            <select name="lec_workshop">
-                                <foreach name="workshop_rows" key="k" item="workshop_row">
-                                    <option value="{$k}">{$workshop_row}</option>
-                                </foreach>
-                            </select>
+                            <label>{$row[0]['lec_workshop'][0]['org_name']}</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-xs-3 control-label">承办学院：</label>
                         <div class="col-xs-8">
-                            <select name="lec_college">
-                                <foreach name="org_rows" key="k" item="org_row">
-                                    <option value="{$org_row['org_id']}">{$org_row['org_name']}</option>
-                                </foreach>
-                            </select>
+                            <label>{$row[0]['lec_college'][0]['org_name']}</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-xs-3 control-label">讲座地点：</label>
                         <div class="col-xs-8">
-                            <input type="text" name='lec_place' class="form-control input-sm" placeholder="请输入讲座地点">
+                            <label>{$row[0]['lec_place']}</label>
                         </div>
                     </div>
                    
                     <div class="form-group">
                         <label class="col-xs-3 control-label">内容简介：</label>
                         <div class="col-xs-8">
-                            <textarea name="lec_content" id="lec_content" plcaeholder="请给出内容"></textarea>
+                            <textarea name="lec_content" id="lec_content" plcaeholder="请给出内容"><label>{$row[0]['lec_content']}</label></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">审核：</label>
+                        <div class="col-xs-8" style="margin-top:1%;">
+                            <select name="examine">
+                                <option value="3">审核通过</option>
+                                <option value="2">退回修改</option>
+                            </select>
                         </div>
                     </div>
                     

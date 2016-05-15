@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="renderer" content="webkit">
-        <title>信息添加</title>
+        <title>信息审核</title>
         <link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}/Public/Admin/BootStrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}Public/Admin/BootStrap/css/bootstrap-table.min.css">
         <!--js文件引入-->
@@ -17,10 +17,13 @@
         <link rel="stylesheet" href="{$Think.const.WWW_PUB}Public/Admin/kindeditor-4.1.10/plugins/code/prettify.css">
         <script src="{$Think.const.WWW_PUB}Public/Admin/kindeditor-4.1.10/plugins/code/prettify.js"></script>
 
+        <script src="{$Think.const.WWW_PUB}Public/Admin/uploadify/jquery.uploadify.js"></script>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}Public/Admin/uploadify/uploadify.css">
+
         <!--kindeditor-->
         <script type="text/javascript">
         KindEditor.ready(function(K) {
-                    var editor1=K.create('textarea[name="lec_content"]',{
+                    var editor1=K.create('textarea[name="open_content"]',{
                         cssPath : '{$Think.const.WWW_PUB}Public/Admin/kindeditor-4.1.10/plugins/code/prettify.css',
                         uploadJson : '{$Think.const.WWW_PUB}Public/Admin/kindeditor-4.1.10/php/upload_json.php',
                         fileManagerJson : '{$Think.const.WWW_PUB}Public/Admin/kindeditor-4.1.10/php/file_manager_json.php',
@@ -38,86 +41,75 @@
         <div>
             <div class="modal-body">
                 <form id="wt-forms" method="post" tabindex="-1" onsubmit="return false;" class="form-horizontal">
-                    <input type="hidden" value="0" name="parentid">
+                    <input type="hidden" value="{$row[0]['open_id']}" name="open_id">
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">讲座名称：</label>
+                        <label class="col-xs-3 control-label">开放日主题：</label>
                         <div class="col-xs-8">
-                            <input type="text" id="lec_name" name="lec_name" placeholder="请给出讲座名称" class="form-control input-sm"> 
+                           <label>{$row[0]['open_theme']}</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">开始时间：</label>
+                        <div class="col-xs-8">
+                            <label>{$row[0]['open_start']}</label>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">讲座时间：</label>
+                        <label class="col-xs-3 control-label">结束时间：</label>
                         <div class="col-xs-8">
-                            <input type="text" id="lec_time" name="lec_time" onclick="WdatePicker()" placeholder="请单击" class="form-control input-sm"> 
+                            <label>{$row[0]['open_end']}</label>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">主讲人：</label>
-                        <div class="col-xs-8">
-                            <input type="text" name='lec_speaker' class="form-control input-sm" placeholder="请输入主讲人">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">主讲人职称：</label>
-                        <div class="col-xs-8">
-                            <select name="lec_duty">
-                                <foreach name="cate_rows" key="k" item="cate_row">
-                                    <option value="{$cate_row['cate_id']}">{$cate_row['cate_name']}</option>
-                                </foreach>
-                            </select>
+                    
+                    <div id="file_upload" class="form-group">
+                        <label class="col-xs-3 control-label">海报：</label>
+                        <div id="divupload0">
+                            <div style="float:left;">
+                                {$row[0]['open_thumb']}
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-xs-3 control-label">主讲人学院：</label>
+                        <label class="col-xs-3 control-label">开放日地点：</label>
                         <div class="col-xs-8">
-                            <select name="lec_speaker_college">
-                                <foreach name="org_rows" key="k" item="org_row">
-                                    <option value="{$org_row['org_id']}">{$org_row['org_name']}</option>
-                                </foreach>
-                            </select>
+                            <label>{$row[0]['open_location']}</label>
                         </div>
                     </div>
+                    
 
                     <div class="form-group">
                         <label class="col-xs-3 control-label">承办实验室：</label>
                         <div class="col-xs-8">
-                            <select name="lec_workshop">
-                                <foreach name="workshop_rows" key="k" item="workshop_row">
-                                    <option value="{$k}">{$workshop_row}</option>
-                                </foreach>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">承办学院：</label>
-                        <div class="col-xs-8">
-                            <select name="lec_college">
-                                <foreach name="org_rows" key="k" item="org_row">
-                                    <option value="{$org_row['org_id']}">{$org_row['org_name']}</option>
-                                </foreach>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">讲座地点：</label>
-                        <div class="col-xs-8">
-                            <input type="text" name='lec_place' class="form-control input-sm" placeholder="请输入讲座地点">
+                            <label>{$row[0]['open_workshop'][0]['org_name']}</label>
                         </div>
                     </div>
                    
                     <div class="form-group">
                         <label class="col-xs-3 control-label">内容简介：</label>
                         <div class="col-xs-8">
-                            <textarea name="lec_content" id="lec_content" plcaeholder="请给出内容"></textarea>
+                            <textarea name="open_content" id="open_content" plcaeholder="请给出内容">{$row[0]['open_content']}</textarea>
                         </div>
                     </div>
-                    
+
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">审核：</label>
+                        <div class="col-xs-8" style="margin-top:1%;">
+                            <select name="examine">
+                                <option value="3">审核通过</option>
+                                <option value="2">退回修改</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
                 </form>
             </div>
         </div>
+
+
 
     </body>
 </html>

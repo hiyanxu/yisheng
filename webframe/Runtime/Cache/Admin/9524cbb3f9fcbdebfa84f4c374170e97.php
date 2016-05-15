@@ -18,10 +18,10 @@
 		<div id="page-content">
 			<div id="main-container container-fluid" style="margin-left:40px;">
 				<div id="headshow" >
-					<button type="button" class="btn btn-success btn-sm" onclick="add();"><span class="glyphicon glyphicon-plus"></span>添加信息</button>
+					<button type="button" class="btn btn-success btn-sm" onclick="add();"><span class="glyphicon glyphicon-plus"></span>添加开放日</button>
 					<button type="button" class="btn btn-danger btn-sm" onclick="delmore(null)"><span class="glyphicon glyphicon-trash"></span>批量删除</button>
 					&nbsp;&nbsp;所属实验室：
-					<select id="lec_workshop" name="lec_workshop">
+					<select id="open_workshop" name="open_workshop">
 						<option value="">全部</option>
 						<?php if(is_array($workshop_rows)): foreach($workshop_rows as $k=>$workshop_row): ?><option value="<?php echo ($k); ?>"><?php echo ($workshop_row); ?></option><?php endforeach; endif; ?>
 					</select>
@@ -36,7 +36,7 @@
 	$('#table').bootstrapTable({
 					classes: "table table-hover", //表的样式'table-no-bordered'无边宽，也可以自己加样式
 					method: 'get',
-					url: "/yisheng/webframe/index.php/Admin/Lecture/ajaxIndex",
+					url: "/yisheng/webframe/index.php/Admin/Openday/ajaxIndex",
 					//cache: false,
 					height: $(window).height(),
 					striped: true, //是否显示条纹的行。
@@ -64,37 +64,32 @@
 					columns: [{
 						checkbox: true
 					}, {
-						field: 'lec_id',
+						field: 'open_id',
 						title: 'ID',
 						sortable: true  //是否排序
 					}, {
-						field: 'lec_name',
-						title: '讲座名称',
+						field: 'open_theme',
+						title: '开放日主题',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'lec_time',
-						title: '讲座时间',
+						field: 'open_start',
+						title: '开始时间',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'org_name_college',
-						title: '所属学院',
+						field: 'open_end',
+						title: '结束时间',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'lec_speaker',
-						title: '主讲人',
+						field: 'open_location',
+						title: '位置',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'org_name_workshop',
+						field: 'open_workshop_name',
 						title: '所属实验室',
-						// visible: false, //刚开始是否显示此字段
-						//sortable: false  //是否排序
-					}, {
-						field: 'lec_place',
-						title: '讲座地点',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
@@ -123,28 +118,23 @@
 				var btnSendEx="";
 				var btnEx="";
 				var btnDel="";
-				var btnUpload="";
 				if(row.is_send_ex=="ok"){					
-					btnSendEx='&nbsp;<a class="remove ml10 btn btn-xs btn-outline btn-default" href="javascript:void(0)" onclick="sendEx('+row.lec_id+')" title="送审"><i class="glyphicon glyphicon-share"></i></a>';
+					btnSendEx='&nbsp;<a class="remove ml10 btn btn-xs btn-outline btn-default" href="javascript:void(0)" onclick="sendEx('+row.open_id+')" title="送审"><i class="glyphicon glyphicon-share"></i></a>';
 				}
 				if(row.is_examine=="ok"){
-					btnEx='&nbsp;<a class="remove ml10 btn btn-xs btn-outline btn-default" href="javascript:void(0)" onclick="examine('+row.lec_id+')" title="审核"><i class="glyphicon glyphicon-check"></i></a>';
+					btnEx='&nbsp;<a class="remove ml10 btn btn-xs btn-outline btn-default" href="javascript:void(0)" onclick="examine('+row.open_id+')" title="审核"><i class="glyphicon glyphicon-check"></i></a>';
 				}
 				if(row.is_edit=="ok"){
-					btnEdit='<a class="remove ml10 btn btn-xs btn-outline btn-default" href="javascript:void(0)" onclick="edit('+row.lec_id+')" title="修改"><i class="glyphicon glyphicon-pencil"></i></a>';
+					btnEdit='<a class="remove ml10 btn btn-xs btn-outline btn-default" href="javascript:void(0)" onclick="edit('+row.open_id+')" title="修改"><i class="glyphicon glyphicon-pencil"></i></a>';
 				}
 				if(row.is_del=="ok"){
-					btnDel='&nbsp;<a class="remove ml10 btn btn-xs btn-outline btn-default" href="javascript:void(0)" onclick="delmore('+row.lec_id+')" title="删除"><i class="glyphicon glyphicon-trash"></i>',
-						'</a>';
-				}
-				if(row.re_status=='<label style="color:#5CB85C;">已发布</label>'){
-					btnUpload='&nbsp;<a class="remove ml10 btn btn-xs btn-outline btn-default" href="javascript:void(0)" onclick="dataUpload('+row.lec_id+')" title="材料上传"><i class="glyphicon glyphicon-open"></i>',
-						'</a>';
+					btnDel='&nbsp;<a class="remove ml10 btn btn-xs btn-outline btn-default" href="javascript:void(0)" onclick="delmore('+row.open_id+')" title="删除"><i class="glyphicon glyphicon-trash"></i>',
+						'</a>'
 				}
 				
 
 				return [
-						btnEdit+btnSendEx+btnDel+btnEx+btnUpload
+						btnEdit+btnSendEx+btnDel+btnEx
 						
 						
 				].join('');
@@ -169,11 +159,11 @@
 			function queryParams(params) {
 
 				if (typeof (params.sort) == "undefined") {
-					params.sort = 'lecture.lec_id'; //默认排序字段
+					params.sort = 'openday.open_id'; //默认排序字段
 					params.order = 'desc';
 				}
-				if(typeof(params.lec_workshop=="undefined")){
-					params.lec_workshop=$("#lec_workshop").val();
+				if(typeof(params.open_workshop=="undefined")){
+					params.open_workshop=$("#open_workshop").val();
 				}
 				params.UserName = 4;
 				params.page = params.pageNumber;
@@ -184,13 +174,13 @@
 
 
 	/*
-		讲座添加操作
-		*/		
-		function add(){
+	开放日添加操作
+	*/
+	function add(){
 			var index = layer.open({
 						type: 2,
 						skin: 'demo-class',
-						title: ['讲座添加', 'font-size:14px;color:black;'],
+						title: ['开放日添加', 'font-size:14px;color:black;'],
 						move: '.layui-layer-title', //触发拖动的元素false 禁止拖拽，.layui-layer-title 可以拖拽
 						area: ['100%', '100%'], //设置弹出框的宽高
 						shade: [0.5, '#000'], //配置遮罩层颜色和透明度
@@ -198,16 +188,16 @@
 						//closeBtn:2,
 						// time:1000,  设置自动关闭窗口时间 1秒=1000；
 						shift: 0, //打开效果：0-6 。0放大，1从上到下，2下到上，3左到右放大，4翻滚效果；5渐变；6抖窗口
-						content: ['/yisheng/webframe/index.php/Admin/Lecture/add', 'yes'],
+						content: ['/yisheng/webframe/index.php/Admin/Openday/add', 'yes'],
 						btn: ['确定', '取消']
 						, yes: function (index) {
 
 						var obj = layer.getChildFrame('#wt-forms', index); //获取form的值
-						var lec_name=obj.find("#lec_name").val();
-						var lec_time=obj.find("#lec_time").val();
-						var lec_speaker=obj.find("#lec_speaker").val();
-						var lec_place=obj.find("#lec_place").val();
-						if(lec_name==""||lec_time==""||lec_speaker==''||lec_place==""){
+						var open_theme=obj.find("#open_theme").val();
+						var open_start=obj.find("#open_start").val();
+						var open_end=obj.find("#open_end").val();
+						var open_location=obj.find("#open_location").val();
+						if(open_theme==""||open_start==""||open_end==''||open_location==""){
 							layer.msg("请将信息填写完整", {
 											icon: 2,
 												time: 1000,
@@ -217,7 +207,7 @@
 						}
 								$.ajax({
 									type: 'post',
-									url: '/yisheng/webframe/index.php/Admin/Lecture/insert',
+									url: '/yisheng/webframe/index.php/Admin/Openday/insert',
 									data: obj.serialize(),
 									cache: false,
 									success: function (data) {
@@ -249,14 +239,15 @@
 				});
 		}
 
+
 		/*
 		送审操作
 		*/
-		function sendEx(lec_id){
+		function sendEx(open_id){
 			$.ajax({
 				type:"post",
-				data:{lec_id:lec_id},
-				url:"/yisheng/webframe/index.php/Admin/Lecture/sendEx",
+				data:{open_id:open_id},
+				url:"/yisheng/webframe/index.php/Admin/Openday/sendEx",
 				success:function(data){
 					if (data.status) {
 											layer.msg(data.msg, {
@@ -279,11 +270,10 @@
 			});
 		}
 
-
 		/*
 		审核操作
 		*/
-		function examine(lec_id){
+		function examine(open_id){
 			var index = layer.open({
 						type: 2,
 						skin: 'demo-class',
@@ -295,24 +285,14 @@
 						//closeBtn:2,
 						// time:1000,  设置自动关闭窗口时间 1秒=1000；
 						shift: 0, //打开效果：0-6 。0放大，1从上到下，2下到上，3左到右放大，4翻滚效果；5渐变；6抖窗口
-						content: ['/yisheng/webframe/index.php/Admin/Lecture/getExamine/lec_id/'+lec_id, 'yes'],
+						content: ['/yisheng/webframe/index.php/Admin/Openday/getExamine/open_id/'+open_id, 'yes'],
 						btn: ['确定', '取消']
 						, yes: function (index) {
 
 						var obj = layer.getChildFrame('#wt-forms', index); //获取form的值
-						var news_name=obj.find("#news_name").val();
-						var news_time=obj.find("#news_time").val();
-						if(news_name==""||news_time==""){
-							layer.msg("请将信息填写完整", {
-											icon: 2,
-												time: 1000,
-												skin: 'layer-ext-moon'
-											});
-							return;
-						}
 								$.ajax({
 									type: 'post',
-									url: '/yisheng/webframe/index.php/Admin/Lecture/examine',
+									url: '/yisheng/webframe/index.php/Admin/Openday/examine',
 									data: obj.serialize(),
 									cache: false,
 									success: function (data) {
@@ -344,14 +324,14 @@
 				});
 		}
 
-		/*
-		讲座修改操作
-		*/		
-		function edit(lec_id){
+	/*
+	开放日修改操作
+	*/
+	function edit(open_id){
 			var index = layer.open({
 						type: 2,
 						skin: 'demo-class',
-						title: ['讲座修改', 'font-size:14px;color:black;'],
+						title: ['开放日修改', 'font-size:14px;color:black;'],
 						move: '.layui-layer-title', //触发拖动的元素false 禁止拖拽，.layui-layer-title 可以拖拽
 						area: ['100%', '100%'], //设置弹出框的宽高
 						shade: [0.5, '#000'], //配置遮罩层颜色和透明度
@@ -359,16 +339,16 @@
 						//closeBtn:2,
 						// time:1000,  设置自动关闭窗口时间 1秒=1000；
 						shift: 0, //打开效果：0-6 。0放大，1从上到下，2下到上，3左到右放大，4翻滚效果；5渐变；6抖窗口
-						content: ['/yisheng/webframe/index.php/Admin/Lecture/edit/lec_id/'+lec_id, 'yes'],
+						content: ['/yisheng/webframe/index.php/Admin/Openday/edit/open_id/'+open_id, 'yes'],
 						btn: ['确定', '取消']
 						, yes: function (index) {
 
 						var obj = layer.getChildFrame('#wt-forms', index); //获取form的值
-						var lec_name=obj.find("#lec_name").val();
-						var lec_time=obj.find("#lec_time").val();
-						var lec_speaker=obj.find("#lec_speaker").val();
-						var lec_place=obj.find("#lec_place").val();
-						if(lec_name==""||lec_time==""||lec_speaker==''||lec_place==""){
+						var open_theme=obj.find("#open_theme").val();
+						var open_start=obj.find("#open_start").val();
+						var open_end=obj.find("#open_end").val();
+						var open_location=obj.find("#open_location").val();
+						if(open_theme==""||open_start==""||open_end==''||open_location==""){
 							layer.msg("请将信息填写完整", {
 											icon: 2,
 												time: 1000,
@@ -378,7 +358,7 @@
 						}
 								$.ajax({
 									type: 'post',
-									url: '/yisheng/webframe/index.php/Admin/Lecture/update',
+									url: '/yisheng/webframe/index.php/Admin/Openday/update',
 									data: obj.serialize(),
 									cache: false,
 									success: function (data) {
@@ -413,21 +393,21 @@
 		/*
 		数据删除的方法  包括批量删除
 		*/
-		function delmore(lec_id){
+		function delmore(open_id){
 			layer.confirm('确定要删除吗？', {
 					btn: ['确定', '取消'],
 				}, function (index, layero) {
-					if (!lec_id) {
+					if (!open_id) {
 						var obj = $('#table').bootstrapTable('getSelections');
 						var ids = '';
 						$.each(obj, function (n, value) {
-							ids += value.lec_id + ',';
+							ids += value.open_id + ',';
 						});
 					} else {
-						var ids = lec_id + ',';
+						var ids = open_id + ',';
 					}
 
-					var actionUrl = "/yisheng/webframe/index.php/Admin/Lecture/del";
+					var actionUrl = "/yisheng/webframe/index.php/Admin/Openday/del";
 						$.ajax({
 						type: 'post',
 								url: actionUrl,
@@ -458,84 +438,18 @@
 				});
 		}
 
-		/*
-		讲座总结材料上传操作
-		*/
-		function dataUpload(lec_id){
-			var index = layer.open({
-						type: 2,
-						skin: 'demo-class',
-						title: ['讲座修改', 'font-size:14px;color:black;'],
-						move: '.layui-layer-title', //触发拖动的元素false 禁止拖拽，.layui-layer-title 可以拖拽
-						area: ['100%', '100%'], //设置弹出框的宽高
-						shade: [0.5, '#000'], //配置遮罩层颜色和透明度
-						shadeClose: true, //是否允许点击遮罩层关闭弹窗 true /false
-						//closeBtn:2,
-						// time:1000,  设置自动关闭窗口时间 1秒=1000；
-						shift: 0, //打开效果：0-6 。0放大，1从上到下，2下到上，3左到右放大，4翻滚效果；5渐变；6抖窗口
-						content: ['/yisheng/webframe/index.php/Admin/Lecture/dataUpload/lec_id/'+lec_id, 'yes'],
-						btn: ['确定', '取消']
-						, yes: function (index) {
-
-						var obj = layer.getChildFrame('#wt-forms', index); //获取form的值
-						var lec_thumb=obj.find("#lec_thumb").val();
-						var lec_link=obj.find("#lec_link").val();
-						var lec_ppt=obj.find("#lec_ppt").val();
-						if(lec_thumb==""||lec_link==""||lec_ppt==''){
-							layer.msg("请将信息填写完整", {
-											icon: 2,
-												time: 1000,
-												skin: 'layer-ext-moon'
-											});
-							return;
-						}
-								$.ajax({
-									type: 'post',
-									url: '/yisheng/webframe/index.php/Admin/Lecture/dataUploadSave',
-									data: obj.serialize(),
-									cache: false,
-									success: function (data) {
-										if (data.status) {
-											layer.msg(data.msg, {
-											icon: 1,
-													time: 1000,
-													skin: 'layer-ext-moon'
-											});
-											$('#table').bootstrapTable('refresh', ''); //刷新表格
-										} else {
-											layer.msg(data.msg, {
-											icon: 2,
-												time: 1000,
-												skin: 'layer-ext-moon'
-											});
-										}
-									},
-									error: function (data) {
-
-									}
-								});
-								//console.log(obj.serialize());
-								layer.close(index); //一般设定yes回调，必须进行手工关闭
-
-						}, cancel: function (index) {
-
-						}
-				});
-		}
-
 		$(function(){
-			$("#lec_workshop").change(function(){
+			$("#open_workshop").change(function(){
 				$('#table').bootstrapTable('refresh', ''); //刷新表格
-			});
-			$("#lec_workshop").change(function(){
-				$('#table').bootstrapTable('refresh', ''); //刷新表格
+				
 			});
 		});
 
 
 
-
 	</script>
+
+
 
 
 	</body>

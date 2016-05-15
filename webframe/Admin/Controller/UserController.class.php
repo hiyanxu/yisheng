@@ -60,11 +60,14 @@ class UserController extends Controller{
 		);
 		$user_obj=new UserModel();
 		$return=$user_obj->dataAdd($data_user);
+
+		$user_identify=md5($data_post["user_account"]."haha"); 
 		
 		$data_account=array(
 			"user_id"=>$return["user_id"],
 			"user_account"=>$data_post["user_account"],
 			"user_pwd"=>$data_post["user_pwd"],
+			"user_identify"=>$user_identify,
 			"role_id"=>$data_post["role_id"],
 			"isenable"=>$data_post["isenable"],
 			"is_admin"=>$data_post["is_admin"]
@@ -182,10 +185,12 @@ class UserController extends Controller{
 		$user_obj=new UserModel();
 		$return=$user_obj->editSave($user_id,$user_data);
 
+		$user_identify=md5($data_post["user_account"]."haha");
 		$data_account=array(
 			"user_id"=>$user_id,
 			"user_account"=>$data_post["user_account"],
 			"user_pwd"=>$data_post["user_pwd"],
+			"user_identify"=>$user_identify,
 			"role_id"=>$data_post["role_id"],
 			"isenable"=>$data_post["isenable"],
 			"is_admin"=>$data_post["is_admin"]

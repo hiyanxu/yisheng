@@ -47,12 +47,12 @@ class AccessController extends AdminController{
 	public function ajaxIndex(){
 		$order=I("get.sort")." ".I("get.order");
 		if(I("get.sort")&&I("get.order")){
-			$data=M("access")->field("access_id,access_name,access_url,remark")->order($order)->limit(I("get.offset"),I("get.limit"))->select();
+			$data=M("access")->field("access_id,access_name,access_url,remark")->order($order)->page(I('get.offset'),I('get.limit'))->select();
 		}
 		else{
-			$data=M("access")->field("access_id,access_name,access_url,remark")->limit(I("get.offset"),I("get.limit"))->select();
+			$data=M("access")->field("access_id,access_name,access_url,remark")->page(I('get.offset'),I('get.limit'))->select();
 		}
-		$total_count=M("access")->field("access_id,access_name,access_url,remark")->count();
+		$total_count=M("access")->count();
 
 		$return=array(
 			"total"=>$total_count,

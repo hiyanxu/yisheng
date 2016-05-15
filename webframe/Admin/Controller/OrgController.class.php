@@ -157,6 +157,15 @@ class OrgController extends AdminController{
 		$org_obj=new OrgModel();
 		$org_college_rows=$org_obj->getOrgTreeRows($college_isenable_row[0]['org_id']);
 
+		//获取所有管理员角色用户
+		$user=M('user_account')->where('is_admin=0')->field('user_id')->select();
+		foreach ($user as $key => $value) {
+			# code...
+			$row=M('user')->where("user_id={$user[$key]['user_id']}")->field('user_id,user_name')->select();
+			$user_rows[$key]=$row[0];
+		}
+		$this->assign('user_rows',$user_rows);
+
 		$this->assign("org_college_rows",$org_college_rows);
 
 		$this->display('info');
@@ -170,6 +179,7 @@ class OrgController extends AdminController{
 
 		$data=array(
 			"org_english_name"=>$data_post['org_english_name'],
+			'org_user_id'=>$data_post['org_user_id'],
 			"org_idea"=>$data_post['org_idea'],
 			"org_icon"=>$data_post['org_icon'],
 			"org_location"=>$data_post['org_location'],
