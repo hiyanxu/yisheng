@@ -440,8 +440,7 @@
 
 		$(function(){
 			$("#open_workshop").change(function(){
-				$('#table').bootstrapTable('refresh', ''); //刷新表格
-				
+				$('#table').bootstrapTable('refresh', ''); //刷新表格				
 			});
 		});
 

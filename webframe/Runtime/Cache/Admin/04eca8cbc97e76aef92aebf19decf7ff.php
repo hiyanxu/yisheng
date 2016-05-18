@@ -1,7 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 	<head>
-		<title>实验室列表页</title>
+		<title>选课信息列表页</title>
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
@@ -18,10 +18,10 @@
 		<div id="page-content">
 			<div id="main-container container-fluid" style="margin-left:40px;">
 				<div id="headshow" >
-					<?php if($return['status'] == 0): ?><button type="button" class="btn btn-success btn-sm" onclick="add();"><span class="glyphicon glyphicon-ok"></span> 确认选课</button>
+					<?php if($return['status'] == 0): ?><button type="button" class="btn btn-success btn-sm" onclick="selectOk();"><span class="glyphicon glyphicon-ok"></span> 确认选课</button>
 						<button type="button" class="btn btn-info btn-sm" onclick="delmore(null)"><span class="glyphicon glyphicon-th-list"></span> 我的课程</button>
 					<?php else: ?>
-						<button type="button" class="btn btn-success btn-sm" disabled="disabled" onclick="add();"><span class="glyphicon glyphicon-ok"></span> 确认选课</button>
+						<button type="button" class="btn btn-success btn-sm" disabled="disabled" onclick="selectOk();"><span class="glyphicon glyphicon-ok"></span> 确认选课</button>
 						<button type="button" class="btn btn-info btn-sm" disabled="disabled" onclick="delmore(null)"><span class="glyphicon glyphicon-th-list"></span> 我的课程</button><?php endif; ?>
 				</div>
 				<div id="divTable">
@@ -29,12 +29,12 @@
 				</div>
 			</div>
 		</div>
-		
+	
 	<script type="text/javascript">
 	$('#table').bootstrapTable({
 					classes: "table table-hover", //表的样式'table-no-bordered'无边宽，也可以自己加样式
 					method: 'get',
-					url: "/yisheng/webframe/index.php/Admin/Workshop/ajaxIndex",
+					url: "/yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex",
 					//cache: false,
 					height: $(window).height(),
 					striped: true, //是否显示条纹的行。
@@ -62,47 +62,33 @@
 					columns: [{
 						checkbox: true
 					}, {
-						field: 'lec_id',
+						field: 'course_id',
 						title: 'ID',
 						sortable: true  //是否排序
 					}, {
-						field: 'lec_name',
-						title: '讲座名称',
+						field: 'course_name',
+						title: '课程名称',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'lec_time',
-						title: '讲座时间',
+						field: 'course_num',
+						title: '课程号',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'org_name_college',
-						title: '所属学院',
+						field: 'course_score',
+						title: '学分',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'lec_speaker',
+						field: 'course_speaker',
 						title: '主讲人',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'org_name_workshop',
-						title: '所属实验室',
-						// visible: false, //刚开始是否显示此字段
-						//sortable: false  //是否排序
-					}, {
-						field: 'lec_place',
-						title: '讲座地点',
-						// visible: false, //刚开始是否显示此字段
-						//sortable: false  //是否排序
-					}, {
-						field: 'ex_status_txt',
-						title: '审核状态',
-						// visible: false, //刚开始是否显示此字段
-						//sortable: true  //是否排序
-					}, {
-						field: 're_status',
-						title: '发布状态',
+						field: 'course_time_txt',
+						title: '上课时间及地点',
+						width:"200",
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
@@ -117,19 +103,21 @@
 
 		function handle(value, row, index) {
 				console.log(row);
+				var btnStu="";
+				if(row.btnCheckStu=="ok"){
+					btnStu='&nbsp;<a class="remove ml10 btn btn-xs btn-outline btn-default" href="javascript:void(0)" onclick="checkStu('+row.course_id+')" title="查看选课学生"><i class="glyphicon glyphicon-user"></i>',
+						'</a>';
+				}
+				
+
 				return [
-						'</a>',
-						'<a class="edit ml10" href="javascript:void(0)" onclick="edit(' + row.menu_id + ')" title="编辑">',
-						'编辑',
-						'</a>',
-						'&nbsp;&nbsp;',
-						'<a class="remove ml10" href="javascript:void(0)" onclick="delmore(' + row.menu_id + ')" title="删除">',
-						'删除',
-						'</a>'
+						btnStu
+						
+						
 				].join('');
 			}
-			
-			function responseHandler(res) {
+
+		function responseHandler(res) {
 
 				if (res.total) {
 					return{
@@ -148,53 +136,55 @@
 			function queryParams(params) {
 
 				if (typeof (params.sort) == "undefined") {
-					params.sort = 'id'; //默认排序字段
+					params.sort = 'course.course_id'; //默认排序字段
 					params.order = 'desc';
 				}
-
+				if(typeof(params.course_workshop=="undefined")){
+					params.course_workshop=$("#course_workshop").val();
+				}
 				params.UserName = 4;
 				params.page = params.pageNumber;
 				//alert(JSON.stringify(params));
 				return params;
 			}
 
+		/*
+		查看选课学生操作
+		*/
+		function checkStu(course_id){
+			window.location.href="/yisheng/webframe/index.php/Admin/Selectcourse/getSelectStu/course_id/"+course_id;
+		}
 
-	/*
-		实验室选取操作
-		*/		
-		function add(){
-			var index = layer.open({
-						type: 2,
-						skin: 'demo-class',
-						title: ['实验室选取', 'font-size:14px;color:black;'],
-						move: '.layui-layer-title', //触发拖动的元素false 禁止拖拽，.layui-layer-title 可以拖拽
-						area: ['400px', '300px'], //设置弹出框的宽高
-						shade: [0.5, '#000'], //配置遮罩层颜色和透明度
-						shadeClose: true, //是否允许点击遮罩层关闭弹窗 true /false
-						//closeBtn:2,
-						// time:1000,  设置自动关闭窗口时间 1秒=1000；
-						shift: 0, //打开效果：0-6 。0放大，1从上到下，2下到上，3左到右放大，4翻滚效果；5渐变；6抖窗口
-						content: ['/yisheng/webframe/index.php/Admin/Workshop/add', 'no'],
-						btn: ['确定', '取消']
-						, yes: function (index) {
-
-						var obj = layer.getChildFrame('#wt-forms', index); //获取form的值
-						var org_id=obj.find("#org_id").val();
-						if(org_id==""){
-							layer.msg("请选择具体组织机构", {
+		/*
+		确认选课操作
+		包括单个选择和多项选择
+		*/
+		function selectOk(){
+			layer.confirm('确定要选择这些课程吗？', {
+					btn: ['确定', '取消'],
+				}, function (index, layero) {
+						var obj = $('#table').bootstrapTable('getSelections');
+						var ids = '';
+						$.each(obj, function (n, value) {
+							ids += value.course_id + ',';
+						});
+					if(ids==""){
+						layer.msg("请选择课程", {
 											icon: 2,
-												time: 1000,
+												time: 1500,
 												skin: 'layer-ext-moon'
 											});
-							return;
-						}
-								$.ajax({
-									type: 'post',
-									url: '/yisheng/webframe/index.php/Admin/Workshop/insert',
-									data: obj.serialize(),
-									cache: false,
-									success: function (data) {
-										if (data.status) {
+						return;
+					}
+
+					var actionUrl = "/yisheng/webframe/index.php/Admin/Selectcourse/selectOk";
+						$.ajax({
+						type: 'post',
+								url: actionUrl,
+								data: {ids:ids},
+								cache: false,
+								success: function (data) {
+									if (data.status) {
 											layer.msg(data.msg, {
 											icon: 1,
 													time: 1000,
@@ -203,26 +193,25 @@
 											$('#table').bootstrapTable('refresh', ''); //刷新表格
 										} else {
 											layer.msg(data.msg, {
-											icon: 2,
+											icon: 3,
 												time: 1000,
 												skin: 'layer-ext-moon'
 											});
 										}
-									},
-									error: function (data) {
+								},
+								error: function (data) {
+								layer.alert(index);
+								}
+						});
+				}, function (index) {
 
-									}
-								});
-								//console.log(obj.serialize());
-								layer.close(index); //一般设定yes回调，必须进行手工关闭
-
-						}, cancel: function (index) {
-
-						}
 				});
 		}
-
+	
 
 	</script>
+
+
+
 	</body>
 </html>
