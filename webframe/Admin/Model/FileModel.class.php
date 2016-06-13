@@ -48,7 +48,7 @@ class FileModel extends Model{
 				$where="file_id='$file_id'";
 			}
 			else if(!is_null($file_name)){
-				$where="file_name='$file_name'";
+				$where="file_path='$file_name'";
 			}
 			//var_dump($where);die();
 			if(M("file")->where($where)->data($data)->save()){

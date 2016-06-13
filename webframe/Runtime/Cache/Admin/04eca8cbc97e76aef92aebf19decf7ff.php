@@ -19,11 +19,12 @@
 			<div id="main-container container-fluid" style="margin-left:40px;">
 				<div id="headshow" >
 					<?php if($return['status'] == 0): ?><button type="button" class="btn btn-success btn-sm" onclick="selectOk();"><span class="glyphicon glyphicon-ok"></span> 确认选课</button>
-						<button type="button" class="btn btn-info btn-sm" onclick="delmore(null)"><span class="glyphicon glyphicon-th-list"></span> 我的课程</button>
+						<button type="button" class="btn btn-info btn-sm" onclick="mycourse()"><span class="glyphicon glyphicon-th-list"></span> 我的课程</button>
 					<?php else: ?>
-						<button type="button" class="btn btn-success btn-sm" disabled="disabled" onclick="selectOk();"><span class="glyphicon glyphicon-ok"></span> 确认选课</button>
-						<button type="button" class="btn btn-info btn-sm" disabled="disabled" onclick="delmore(null)"><span class="glyphicon glyphicon-th-list"></span> 我的课程</button><?php endif; ?>
+						<button type="button" class="btn btn-success btn-sm" disabled="disabled" ><span class="glyphicon glyphicon-ok"></span> 确认选课</button>
+						<button type="button" class="btn btn-info btn-sm" disabled="disabled"><span class="glyphicon glyphicon-th-list"></span> 我的课程</button><?php endif; ?>
 				</div>
+				<input type="hidden" name="status" id="status" value="<?php echo ($return['status']); ?>">
 				<div id="divTable">
 					<table id="table"></table>
 				</div>
@@ -31,10 +32,11 @@
 		</div>
 	
 	<script type="text/javascript">
+	var status=$("#status").val();
 	$('#table').bootstrapTable({
 					classes: "table table-hover", //表的样式'table-no-bordered'无边宽，也可以自己加样式
 					method: 'get',
-					url: "/yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex",
+					url: "/yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status/"+status,
 					//cache: false,
 					height: $(window).height(),
 					striped: true, //是否显示条纹的行。
@@ -152,7 +154,7 @@
 		查看选课学生操作
 		*/
 		function checkStu(course_id){
-			window.location.href="/yisheng/webframe/index.php/Admin/Selectcourse/getSelectStu/course_id/"+course_id;
+			window.location.href="<?php echo (WWW_PUB); ?>/index.php/Admin/Course/getSelectStu/course_id/"+course_id;
 		}
 
 		/*
@@ -193,8 +195,8 @@
 											$('#table').bootstrapTable('refresh', ''); //刷新表格
 										} else {
 											layer.msg(data.msg, {
-											icon: 3,
-												time: 1000,
+											icon: 2,
+												time: 1500,
 												skin: 'layer-ext-moon'
 											});
 										}
@@ -206,6 +208,13 @@
 				}, function (index) {
 
 				});
+		}
+
+		/*
+		我的课程操作
+		*/
+		function mycourse(){
+			window.location.href="/yisheng/webframe/index.php/Admin/Selectcourse/mycourse";
 		}
 	
 

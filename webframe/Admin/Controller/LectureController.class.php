@@ -120,24 +120,46 @@ class LectureController extends AdminController{
 	public function ajaxIndex(){
 		$order=I('get.sort')." ".I('get.order');
 		$where="";
+		$lec_exam_status=I("get.lec_ex_status");
+		//dd($lec_exam_status);
 
 		$workflow_enable=M('lec_workflow')->where('isenable=0')->field('workflow_id')->select();//当前启用的工作流		
 		$account=session('loginaccount');  //当前人登录账号
 		$role=M('user_account')->where("user_account_id={$account}")->field('role_id')->select();
 		$workflow_enable_steps=M('workflow')->where("workflow_id={$workflow_enable[0]['workflow_id']}")->field('steps')->select();
-
+		//dd($role);
 		if($role[0]['role_id']!=1){  //表示当前登录人不是系统最高管理员
 			$login_user=M('user_account')->where("user_account_id={$account}")->field('user_id')->select();  //当前人的实验室id	
 			$login_workshop=M('user')->where("user_id={$login_user[0]['user_id']}")->field("org_id")->select();
 			
-			$where.=" lec_workshop={$login_workshop[0]['org_id']}";
+			if($lec_exam_status!=""){
+				$where.=" lec_workshop={$login_workshop[0]['org_id']} and lec_exam_status={$lec_exam_status}";
+			}
+			else{
+				$where.=" lec_workshop={$login_workshop[0]['org_id']}";
+			}
+			
 		}
 		else{
 			$lec_workshop=I('get.lec_workshop');
 			if(!empty($lec_workshop)){
-				$where.=" lec_workshop={$lec_workshop}";
+				if($lec_exam_status!=""){
+					$where.=" lec_workshop={$lec_workshop} and lec_exam_status={$lec_exam_status}";
+				}
+				else{
+					$where.=" lec_workshop={$lec_workshop}";
+				}
+			}
+			else{
+				if($lec_exam_status!=""){
+					$where.=" lec_exam_status={$lec_exam_status}";
+				}
+				else{
+					$where.="";
+				}
 			}
 		}
+		//dd($where);
 
 		if(!empty($where)){
 			$data=M('lecture')->where($where)

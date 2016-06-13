@@ -60,9 +60,10 @@ class FileController extends AdminController{
 	public function uploader(){
 			// Define a destination
 		$path = UPLOAD_PATH; // Relative to the root
+		//dd($path);
 		$verifyToken = md5('unique_salt' . $_POST['timestamp']);
 
-		if (!empty($_FILES) && $_POST['token'] == $verifyToken) {
+		if (!empty($_FILES)) {
 			if(!file_exists($path)){
 		        mkdir($path,0777,true);
 		    }
@@ -102,7 +103,7 @@ class FileController extends AdminController{
 		                	"create_by"=>$create_by,
 		                	"create_at"=>$create_at
 		                	);
-		                $this->insert($data);
+		                $return_ins=$this->insert($data);
 		                //$this->ajaxReturn($return,"JSON");
 		            }
 		            else{
@@ -249,8 +250,9 @@ class FileController extends AdminController{
 			$row=M("user_account")->field("user_account")->where("user_account_id='".$value['create_by']."'")->select();
 			$data[$key]["addUser"]=$row[0]['user_account'];
 			$data[$key]['is_effective_text']=$value['is_effective']==0?"<label style='color:#7EAEF5;'>有效</label>":"<label style='color:red;'>无效</label>";
-			$data[$key]['file_path']=str_replace("/var/www/html/webframework/webframe", "", $value['file_path']);
+			$data[$key]['file_path']=str_replace("/var/www/html/yisheng/webframe", "", $value['file_path']);
 			$data[$key]['download_path']=WWW_PUB.$data[$key]['file_path'];
+
 		}
 
 		$return=array(

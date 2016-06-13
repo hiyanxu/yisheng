@@ -122,6 +122,7 @@ class OpendayController extends AdminController{
 	*/
 	public function ajaxIndex(){
 		$order=I('get.sort')." ".I('get.order');
+		$open_ex_status=I("get.lec_ex_status");
 		$where="";
 
 		$workflow_enable=M('lec_workflow')->where('isenable=0')->field('workflow_id')->select();//当前启用的工作流		
@@ -134,11 +135,31 @@ class OpendayController extends AdminController{
 			$login_workshop=M('user')->where("user_id={$login_user[0]['user_id']}")->field("org_id")->select();
 			
 			$where.=" open_workshop={$login_workshop[0]['org_id']}";
+			if($open_ex_status!=""){
+				$where.=" open_workshop={$login_workshop[0]['org_id']} and open_ex_status={$open_ex_status}";
+			}
+			else{
+				$where.=" open_workshop={$login_workshop[0]['org_id']}";
+			}
 		}
 		else{
 			$open_workshop=I('get.open_workshop');
+
 			if(!empty($open_workshop)){
-				$where.=" open_workshop={$open_workshop}";
+				if($open_ex_status!=""){
+					$where.=" open_workshop={$open_workshop} and open_ex_status={$open_ex_status}";
+				}
+				else{
+					$where.=" open_workshop={$open_workshop}";
+				}
+			}
+			else{
+				if($open_ex_status!=""){
+					$where.=" open_ex_status={$open_ex_status}";
+				}
+				else{
+					$where.="";
+				}
 			}
 		}
 
@@ -379,6 +400,96 @@ class OpendayController extends AdminController{
 			$return=$obj->dataDel($value);
 		}
 		$this->ajaxReturn($return,"JSON");
+	}
+
+	/*
+	图片上传处理程序
+	*/
+	public function uploader(){
+			// Define a destination
+		$path = UPLOAD_PATH; // Relative to the root
+		$verifyToken = md5('unique_salt' . $_POST['timestamp']);
+
+		if (!empty($_FILES)) {
+			if(!file_exists($path)){
+		        mkdir($path,0777,true);
+		    }
+		    $fileInfo=  $this->getFileInfo($_FILES);
+		    //var_dump($fileInfo);die();
+		    if(!($fileInfo&&is_array($fileInfo))){
+		        exit();
+		    }
+		    foreach($fileInfo as $files){        
+		        if($files["error"]==UPLOAD_ERR_OK){  //当前表示上传没有错误
+		            $ext=$this->getFileExt($files["name"]);  //得到文件的扩展名
+		            $fileName=$this->getUniName().".".$ext;
+		            $destination=$path."/".$fileName;
+		            if(move_uploaded_file($files["tmp_name"], $destination)){
+		                $file['name']=$fileName;
+		                unset($files['error'],$files['tmp_name'],$files['size'],$files['type']);
+		                $uploadedFiles['status']="true";
+		                $uploadedFiles['name']=$file['name'];
+		            }
+		            else{
+		                $mes="文件上传失败！";
+		            }
+		        }
+		        else{
+		            switch ($files["error"]){
+		                case 1:
+		                    $mes="超过配置文件限制的上传大小";
+		                    break;
+		                case 2:
+		                    $mes="超过表单设置的上传文件大小";
+		                    break;
+		                case 3:
+		                    $mes="文件部分被上传";
+		                    break;
+		                case 4:
+		                    $mes="文件没有被上传";
+		                    break;
+		                case 6:
+		                    $mes="没有找到临时目录";
+		                    break;
+		                case 7:
+		                    $mes="文件不可写";
+		                    break;
+		                case 8:
+		                    $mes="由于php的扩展程序中断了文件上传";
+		                    break;                
+		            }
+		            $uploadedFiles['status']="false";
+		            $uploadedFiles['msg']=$mes;
+		        }        
+		    }
+		    echo $this->ajaxReturn($uploadedFiles,"JSON");
+		}
+	}
+
+	/*
+	 * 通过用户上传文件信息得到用户的一维数组的信息
+	 * 参数：用户上传的$_FILES数组
+	 */
+	function getFileInfo($files){
+	    foreach ($files as $file){
+	        $fileInfo[]=$file;
+	    }
+	    return $fileInfo;
+	}
+
+	/*
+	 * 得到用户上传文件的扩展名
+	 * 参数：用户上传的$fileName
+	 */
+	function getFileExt($filename){
+	    return strtolower(end(explode(".", $filename)));
+	}
+
+	/*
+	 * 给出一个唯一字符串
+	 */
+	function getUniName(){
+	    return md5(uniqid(microtime(true),true));
 	}
 
 

@@ -105,11 +105,8 @@
 			function queryParams(params) {
 
 				if (typeof (params.sort) == "undefined") {
-					params.sort = 'course.course_id'; //默认排序字段
+					params.sort = 'user_account_id'; //默认排序字段
 					params.order = 'desc';
-				}
-				if(typeof(params.course_workshop=="undefined")){
-					params.course_workshop=$("#course_workshop").val();
 				}
 				params.UserName = 4;
 				params.page = params.pageNumber;

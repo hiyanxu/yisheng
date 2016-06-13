@@ -157,19 +157,31 @@ class OrgController extends AdminController{
 		$org_obj=new OrgModel();
 		$org_college_rows=$org_obj->getOrgTreeRows($college_isenable_row[0]['org_id']);
 
-		//获取所有管理员角色用户
-		$user=M('user_account')->where('is_admin=0')->field('user_id')->select();
-		foreach ($user as $key => $value) {
-			# code...
-			$row=M('user')->where("user_id={$user[$key]['user_id']}")->field('user_id,user_name')->select();
-			$user_rows[$key]=$row[0];
+		//根据当前登录人获取该实验室的负责人信息
+		$login_role_id=session("loginuserroleid");  //获取当前登录人角色信息
+		if($login_role_id==1){  //表示当前登录人是系统最高管理员，则我们给出所有当前管理员信息
+			//获取所有管理员角色用户
+			$user=M('user_account')->where('is_admin=0')->field('user_id')->select();
+			foreach ($user as $key => $value) {
+				# code...
+				$row=M('user')->where("user_id={$user[$key]['user_id']}")->field('user_id,user_name')->select();
+				$user_rows[$key]=$row[0];
+			}
 		}
+		else{  //表示当前登录人肯定某个实验室的实验室管理员
+			$login_user_id=session("loginuserid");
+			$login_user_name=M("user")->where("user_id={$login_user_id}")->field("user_id,user_name")->limit(1)->select(); 
+			$user_rows[0]=$login_user_name[0];  //获取某一个指定的用户信息
+		}
+
+		
 		$this->assign('user_rows',$user_rows);
 
 		$this->assign("org_college_rows",$org_college_rows);
 
 		$this->display('info');
 	}
+
 
 	/*
 	信息完善保存操作
@@ -202,7 +214,7 @@ class OrgController extends AdminController{
 		$path = UPLOAD_PATH; // Relative to the root
 		$verifyToken = md5('unique_salt' . $_POST['timestamp']);
 
-		if (!empty($_FILES) && $_POST['token'] == $verifyToken) {
+		if (!empty($_FILES)) {
 			if(!file_exists($path)){
 		        mkdir($path,0777,true);
 		    }
@@ -221,29 +233,6 @@ class OrgController extends AdminController{
 		                unset($files['error'],$files['tmp_name'],$files['size'],$files['type']);
 		                $uploadedFiles['status']="true";
 		                $uploadedFiles['name']=$file['name'];
-
-		                //当前在这里执行入附件库操作
-		                /*$filpath=$destination;  //文件存放路径
-		                $file_former_name=$files["name"];  //文件最初的名字
-		                $file_mime=mime_content_type($files['name']);  //获取文件mime类型
-		                $file_ext=$ext;
-		                $file_size=filesize($files['name']);  //获取文件大小
-		                $is_effective=1;  //0：有效  1：无效  默认为无效
-		                $create_by=session("loginaccount");
-		                $create_at=time();
-		                $data=array(
-		                	"file_name"=>$fileName,
-		                	"file_path"=>$filpath,
-		                	"file_former_name"=>$file_former_name,
-		                	"file_mime"=>$fileInfo[0]['type'],
-		                	"file_ext"=>$file_ext,
-		                	"file_size"=>$fileInfo[0]['size'],
-		                	"is_effective"=>$is_effective,
-		                	"create_by"=>$create_by,
-		                	"create_at"=>$create_at
-		                	);
-		                $this->insert($data);*/
-		                //$this->ajaxReturn($return,"JSON");
 		            }
 		            else{
 		                $mes="文件上传失败！";

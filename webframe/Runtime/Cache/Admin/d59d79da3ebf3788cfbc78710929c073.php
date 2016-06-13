@@ -18,11 +18,8 @@
 		<div id="page-content">
 			<div id="main-container container-fluid" style="margin-left:40px;">
 				<div id="headshow" >
-					<?php if($return['status'] == 0): ?><button type="button" class="btn btn-success btn-sm" onclick="add();"><span class="glyphicon glyphicon-ok"></span> 确认选课</button>
-						<button type="button" class="btn btn-info btn-sm" onclick="delmore(null)"><span class="glyphicon glyphicon-th-list"></span> 我的课程</button>
-					<?php else: ?>
-						<button type="button" class="btn btn-success btn-sm" disabled="disabled" onclick="add();"><span class="glyphicon glyphicon-ok"></span> 确认选课</button>
-						<button type="button" class="btn btn-info btn-sm" disabled="disabled" onclick="delmore(null)"><span class="glyphicon glyphicon-th-list"></span> 我的课程</button><?php endif; ?>
+						<button type="button" class="btn btn-success btn-sm" onclick="add();"><span class="glyphicon glyphicon-search"></span> 实验室选取</button>
+						<button type="button" class="btn btn-success btn-sm" onclick="add_workshop();"><span class="glyphicon glyphicon-plus"></span> 添加实验室</button>
 				</div>
 				<div id="divTable">
 					<table id="table"></table>
@@ -62,49 +59,44 @@
 					columns: [{
 						checkbox: true
 					}, {
-						field: 'lec_id',
+						field: 'org_id',
 						title: 'ID',
 						sortable: true  //是否排序
 					}, {
-						field: 'lec_name',
-						title: '讲座名称',
+						field: 'org_name',
+						title: '实验室名称',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'lec_time',
-						title: '讲座时间',
+						field: 'org_english_name',
+						title: '英文名称',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'org_name_college',
-						title: '所属学院',
+						field: 'user_name',
+						title: '负责人',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'lec_speaker',
-						title: '主讲人',
+						field: 'org_idea',
+						title: '理念宗旨',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'org_name_workshop',
-						title: '所属实验室',
+						field: 'org_icon',
+						title: '标志',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'lec_place',
-						title: '讲座地点',
+						field: 'org_name_shang',
+						title: '上级单位',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: false  //是否排序
 					}, {
-						field: 'ex_status_txt',
-						title: '审核状态',
+						field: 'org_location',
+						title: '地理位置',
 						// visible: false, //刚开始是否显示此字段
 						//sortable: true  //是否排序
-					}, {
-						field: 're_status',
-						title: '发布状态',
-						// visible: false, //刚开始是否显示此字段
-						//sortable: false  //是否排序
 					}, {
 						field: '',
 						title: '操作',
@@ -117,14 +109,10 @@
 
 		function handle(value, row, index) {
 				console.log(row);
+
 				return [
-						'</a>',
-						'<a class="edit ml10" href="javascript:void(0)" onclick="edit(' + row.menu_id + ')" title="编辑">',
-						'编辑',
-						'</a>',
-						'&nbsp;&nbsp;',
-						'<a class="remove ml10" href="javascript:void(0)" onclick="delmore(' + row.menu_id + ')" title="删除">',
-						'删除',
+						'<a class="remove ml10 btn btn-xs btn-outline btn-default" href="javascript:void(0)" onclick="edit('+row.org_id+')" title="修改"><i class="glyphicon glyphicon-pencil"></i></a>'+
+						'&nbsp;<a class="remove ml10 btn btn-xs btn-outline btn-default" href="javascript:void(0)" onclick="delmore('+row.org_id+')" title="删除"><i class="glyphicon glyphicon-trash"></i>',
 						'</a>'
 				].join('');
 			}
@@ -148,7 +136,7 @@
 			function queryParams(params) {
 
 				if (typeof (params.sort) == "undefined") {
-					params.sort = 'id'; //默认排序字段
+					params.sort = 'org_id'; //默认排序字段
 					params.order = 'desc';
 				}
 
@@ -159,7 +147,7 @@
 			}
 
 
-	/*
+		/*
 		实验室选取操作
 		*/		
 		function add(){
@@ -220,6 +208,135 @@
 
 						}
 				});
+		}
+
+		/*
+		实验室添加操作
+		*/
+		function add_workshop(){
+			var index = layer.open({
+						type: 2,
+						skin: 'demo-class',
+						title: ['实验室添加', 'font-size:14px;color:black;'],
+						move: '.layui-layer-title', //触发拖动的元素false 禁止拖拽，.layui-layer-title 可以拖拽
+						area: ['400px', '300px'], //设置弹出框的宽高
+						shade: [0.5, '#000'], //配置遮罩层颜色和透明度
+						shadeClose: true, //是否允许点击遮罩层关闭弹窗 true /false
+						//closeBtn:2,
+						// time:1000,  设置自动关闭窗口时间 1秒=1000；
+						shift: 0, //打开效果：0-6 。0放大，1从上到下，2下到上，3左到右放大，4翻滚效果；5渐变；6抖窗口
+						content: ['/yisheng/webframe/index.php/Admin/Workshop/add_workshop', 'no'],
+						btn: ['确定', '取消']
+						, yes: function (index) {
+
+						var obj = layer.getChildFrame('#wt-forms', index); //获取form的值
+								$.ajax({
+									type: 'post',
+									url: '<?php echo U("Org/insert");?>',
+									data: obj.serialize(),
+									cache: false,
+									success: function (data) {
+										if (data.status) {
+											layer.msg(data.msg, {
+											icon: 1,
+													time: 1000,
+													skin: 'layer-ext-moon'
+											});
+											$('#table').bootstrapTable('refresh', ''); //刷新表格
+										} else {
+											layer.msg(data.msg, {
+											icon: 2,
+												time: 1000,
+												skin: 'layer-ext-moon'
+											});
+										}
+									},
+									error: function (data) {
+
+									}
+								});
+								//console.log(obj.serialize());
+								layer.close(index); //一般设定yes回调，必须进行手工关闭
+
+						}, cancel: function (index) {
+
+						}
+				});
+		}
+
+		/*
+		实验室信息修改操作
+		*/
+		function edit(org_id){
+			var index=layer.open({
+				type:2,
+				skin:"demo-class",
+				title:["信息完善","font-size:14px;background:#2b9af6;color:#fff"],
+				move:".layui-layer-title",
+				area:["100%","100%"],
+				shade:[0.5,"#000"],
+				shadeClose:true,
+				shift:0,
+				content:['<?php echo (WWW_PUB); ?>index.php/Admin/Org/infoGive/org_id/'+org_id],
+				btn:['确定','取消'],
+				yes:function(index){
+					var obj=layer.getChildFrame("#wt-forms",index);
+						var org_english_name=obj.find("#org_english_name").val();
+						var org_idea=obj.find("#org_idea").val();
+						var org_phone=obj.find("#org_phone").val();
+						var org_email=obj.find("#org_email").val();
+						if(org_english_name==""||org_idea==""){
+							layer.msg("机构名称不能为空",{icon:2,time:1500,skin:"layer-ext-moon"});
+							return;
+						}
+						var re_phone=/^1\d{10}$/;  //正则表达式，以1开头，匹配10个数字
+						if(org_phone!=""&&!re_phone.test(org_phone)){
+							layer.msg("手机格式错误", {
+											icon: 2,
+												time: 1500,
+												skin: 'layer-ext-moon'
+											});
+							return;
+						}
+						var re_email=/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+						if(org_email!=""&&!re_email.test(org_email)){
+							layer.msg("邮箱格式错误", {
+											icon: 2,
+												time: 1500,
+												skin: 'layer-ext-moon'
+											});
+							return;
+						}
+						var actionUrl="<?php echo (WWW_PUB); ?>index.php/Admin/Org/infoGiveUpload";
+						$.ajax({
+							type:"post",
+							url:actionUrl,
+							data:obj.serialize(),
+							cache:false,
+							success:function(data){
+								if(data.status){
+									layer.msg(data.msg,{
+										icon:1,
+										time:1500,
+										skin:'layer-ext-moon'
+									});
+									layer.close(index);
+									load();
+								}
+								else{
+									layer.msg(data.msg,{
+										icon:3,
+										time:1500,
+										skin:'layer-ext-moon'
+									});
+								}
+							},
+							error:function(data){
+
+							}
+						});
+				}
+			});
 		}
 
 

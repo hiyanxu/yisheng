@@ -196,3 +196,692 @@ SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0010s ]
 SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
 ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
 
+[ 2016-05-18T14:56:11+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/dataUploadSave
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000725s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+
+[ 2016-05-18T14:56:45+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/dataUploadSave
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000961s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+
+[ 2016-05-18T14:58:18+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/dataUploadSave
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000507s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000862s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: UPDATE `course` SET `course_num`='3',`course_score`='3' WHERE ( course_id=5 ) [ RunTime:0.0214s ]
+
+[ 2016-05-18T14:58:18+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/ajaxIndex?limit=15&offset=0&sort=course.course_id&order=desc&course_workshop=&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000684s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lec_workflow` [ RunTime:0.0005s ]
+SQL: SELECT `workflow_id` FROM `lec_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM `user_account` WHERE ( user_account_id=14 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0005s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT `course_id`,`course_name`,`course_start`,`course_semester`,`course_speaker`,`course_hours`,`course_workshop`,`course_ex_status`,`course_add_user`,`course_wof_step_now`,`course_rel_status` FROM `course` ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflowstep` [ RunTime:0.0006s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+
+[ 2016-05-18T14:58:26+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/dataUploadSave
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0006s ]
+SQL: UPDATE `course` SET `course_num`='2',`course_score`='2' WHERE ( course_id=3 ) [ RunTime:0.0074s ]
+
+[ 2016-05-18T14:58:27+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/ajaxIndex?limit=15&offset=0&sort=course.course_id&order=desc&course_workshop=&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lec_workflow` [ RunTime:0.0005s ]
+SQL: SELECT `workflow_id` FROM `lec_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM `user_account` WHERE ( user_account_id=14 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0007s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT `course_id`,`course_name`,`course_start`,`course_semester`,`course_speaker`,`course_hours`,`course_workshop`,`course_ex_status`,`course_add_user`,`course_wof_step_now`,`course_rel_status` FROM `course` ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflowstep` [ RunTime:0.0005s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0001s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0001s ]
+
+[ 2016-05-18T14:58:49+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T14:59:19+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Workshop/ajaxIndex?limit=15&offset=0&sort=id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `workshop` [ RunTime:0.0005s ]
+SQL: SELECT `org_id` FROM `workshop` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: order /var/www/html/yisheng/webframe/Admin/Controller/WorkshopController.class.php 第 63 行.
+SQL: SELECT `org_id`,`org_name`,`org_english_name`,`org_user_id`,`org_icon`,`org_location` FROM `organization` WHERE ( parentid=8 ) LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( parentid=8 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id=0 )  [ RunTime:0.0002s ]
+
+[ 2016-05-18T14:59:22+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000659s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T14:59:42+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000707s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T14:59:49+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/ajaxIndex?limit=15&offset=0&sort=course.course_id&order=desc&course_workshop=&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lec_workflow` [ RunTime:0.0005s ]
+SQL: SELECT `workflow_id` FROM `lec_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM `user_account` WHERE ( user_account_id=14 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0005s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT `course_id`,`course_name`,`course_start`,`course_semester`,`course_speaker`,`course_hours`,`course_workshop`,`course_ex_status`,`course_add_user`,`course_wof_step_now`,`course_rel_status` FROM `course` ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflowstep` [ RunTime:0.0005s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0001s ]
+
+[ 2016-05-18T15:21:52+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status1?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001172s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:30:33+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status2?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000596s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id=21 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:31:27+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status2?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+
+[ 2016-05-18T15:31:32+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status2?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+
+[ 2016-05-18T15:31:59+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status/2?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000695s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+
+[ 2016-05-18T15:32:15+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status/2?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000420s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000469s ]
+
+[ 2016-05-18T15:32:42+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/ajaxIndex?limit=15&offset=0&sort=course.course_id&order=desc&course_workshop=&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lec_workflow` [ RunTime:0.0005s ]
+SQL: SELECT `workflow_id` FROM `lec_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM `user_account` WHERE ( user_account_id=14 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0006s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT `course_id`,`course_name`,`course_start`,`course_semester`,`course_speaker`,`course_hours`,`course_workshop`,`course_ex_status`,`course_add_user`,`course_wof_step_now`,`course_rel_status` FROM `course` ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflowstep` [ RunTime:0.0005s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:32:43+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status/1?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:32:46+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/ajaxIndex?limit=15&offset=0&sort=course.course_id&order=desc&course_workshop=&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lec_workflow` [ RunTime:0.0005s ]
+SQL: SELECT `workflow_id` FROM `lec_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM `user_account` WHERE ( user_account_id=14 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0006s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT `course_id`,`course_name`,`course_start`,`course_semester`,`course_speaker`,`course_hours`,`course_workshop`,`course_ex_status`,`course_add_user`,`course_wof_step_now`,`course_rel_status` FROM `course` ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflowstep` [ RunTime:0.0005s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0001s ]
+
+[ 2016-05-18T15:32:54+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/openSelect
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: UPDATE `course` SET `course_is_select`='0' WHERE ( course_semester=1 and course_rel_status=1 ) [ RunTime:0.0053s ]
+
+[ 2016-05-18T15:32:55+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/ajaxIndex?limit=15&offset=0&sort=course.course_id&order=desc&course_workshop=&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002023s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lec_workflow` [ RunTime:0.0005s ]
+SQL: SELECT `workflow_id` FROM `lec_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM `user_account` WHERE ( user_account_id=14 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0006s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT `course_id`,`course_name`,`course_start`,`course_semester`,`course_speaker`,`course_hours`,`course_workshop`,`course_ex_status`,`course_add_user`,`course_wof_step_now`,`course_rel_status` FROM `course` ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflowstep` [ RunTime:0.0005s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:32:55+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/ajaxIndex?limit=15&offset=0&sort=course.course_id&order=desc&course_workshop=&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000686s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lec_workflow` [ RunTime:0.0005s ]
+SQL: SELECT `workflow_id` FROM `lec_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM `user_account` WHERE ( user_account_id=14 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0006s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT `course_id`,`course_name`,`course_start`,`course_semester`,`course_speaker`,`course_hours`,`course_workshop`,`course_ex_status`,`course_add_user`,`course_wof_step_now`,`course_rel_status` FROM `course` ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0005s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflowstep` [ RunTime:0.0005s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0001s ]
+
+[ 2016-05-18T15:33:01+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status/0?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:33:51+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/update
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001052s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: login_user /var/www/html/yisheng/webframe/Admin/Controller/CourseController.class.php 第 576 行.
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0006s ]
+SQL: UPDATE `course` SET `course_name`='高等数学',`course_start`='1462032000',`course_end`='1462204800',`course_semester`='1',`course_workshop`='9',`course_speaker`='季占林',`course_hours`='43',`course_zhouji`='1|2|3|4|',`course_jiang`='1|2|3|4|',`course_location`='101|202|303|404|',`course_time`='4-5|2-3|3-4|4-5|',`course_content`='3内容',`course_edit_time`='1463556831',`course_edit_user`=NULL WHERE ( course_id=5 ) [ RunTime:0.0068s ]
+
+[ 2016-05-18T15:33:51+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/ajaxIndex?limit=15&offset=0&sort=course.course_id&order=desc&course_workshop=&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lec_workflow` [ RunTime:0.0007s ]
+SQL: SELECT `workflow_id` FROM `lec_workflow` WHERE ( isenable=0 )  [ RunTime:0.0002s ]
+SQL: SELECT `role_id` FROM `user_account` WHERE ( user_account_id=14 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0005s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT `course_id`,`course_name`,`course_start`,`course_semester`,`course_speaker`,`course_hours`,`course_workshop`,`course_ex_status`,`course_add_user`,`course_wof_step_now`,`course_rel_status` FROM `course` ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflowstep` [ RunTime:0.0005s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0003s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:34:09+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/update
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: login_user /var/www/html/yisheng/webframe/Admin/Controller/CourseController.class.php 第 576 行.
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0006s ]
+SQL: UPDATE `course` SET `course_name`='ASP.NET高级编程',`course_start`='1462032000',`course_end`='1462118400',`course_semester`='1',`course_workshop`='9',`course_speaker`='李志新',`course_hours`='32',`course_zhouji`='1|2|3|',`course_jiang`='1|2|3|',`course_location`='5a202|5b303|5a404|',`course_time`='2-4|3-5|4-12|',`course_content`='课程2内容',`course_edit_time`='1463556849',`course_edit_user`=NULL WHERE ( course_id=3 ) [ RunTime:0.0067s ]
+
+[ 2016-05-18T15:34:09+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Course/ajaxIndex?limit=15&offset=0&sort=course.course_id&order=desc&course_workshop=&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000577s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `lec_workflow` [ RunTime:0.0005s ]
+SQL: SELECT `workflow_id` FROM `lec_workflow` WHERE ( isenable=0 )  [ RunTime:0.0003s ]
+SQL: SELECT `role_id` FROM `user_account` WHERE ( user_account_id=14 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0007s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT `course_id`,`course_name`,`course_start`,`course_semester`,`course_speaker`,`course_hours`,`course_workshop`,`course_ex_status`,`course_add_user`,`course_wof_step_now`,`course_rel_status` FROM `course` ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `workflowstep` [ RunTime:0.0005s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0001s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id=9 )  [ RunTime:0.0001s ]
+SQL: SELECT `step_now` FROM `workflowstep` WHERE ( workflow_id=8 and role_id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT `steps` FROM `workflow` WHERE ( workflow_id=8 )  [ RunTime:0.0001s ]
+
+[ 2016-05-18T15:34:12+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status/0?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:40:47+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/selectOk
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+
+[ 2016-05-18T15:41:01+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Access/ajaxIndex?limit=15&offset=0&sort=access_id&order=Asc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `access` [ RunTime:0.0008s ]
+SQL: SELECT `access_id`,`access_name`,`access_url`,`remark` FROM `access` ORDER BY access_id Asc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `access` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:41:05+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Access/ajaxIndex?limit=15&offset=15&sort=access_id&order=Asc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `access` [ RunTime:0.0005s ]
+SQL: SELECT `access_id`,`access_name`,`access_url`,`remark` FROM `access` ORDER BY access_id Asc LIMIT 210,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `access` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:41:08+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Access/ajaxIndex?limit=15&offset=0&sort=access_id&order=Asc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `access` [ RunTime:0.0005s ]
+SQL: SELECT `access_id`,`access_name`,`access_url`,`remark` FROM `access` ORDER BY access_id Asc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `access` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:41:18+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Access/ajaxIndex?limit=15&offset=0&sort=access_id&order=Asc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `access` [ RunTime:0.0006s ]
+SQL: SELECT `access_id`,`access_name`,`access_url`,`remark` FROM `access` ORDER BY access_id Asc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `access` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:42:07+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Access/insert
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `access` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `access` [ RunTime:0.0005s ]
+SQL: INSERT INTO `access` (`access_name`,`access_url`,`remark`) VALUES ('选课权限','Selectcourse/selectOk','选课完成入库权限') [ RunTime:0.0073s ]
+
+[ 2016-05-18T15:42:07+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Access/ajaxIndex?limit=15&offset=0&sort=access_id&order=Asc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `access` [ RunTime:0.0005s ]
+SQL: SELECT `access_id`,`access_name`,`access_url`,`remark` FROM `access` ORDER BY access_id Asc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `access` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:42:09+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Role/ajaxIndex?limit=15&offset=0&sort=role_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT `role_id`,`role_name`,`role_desc` FROM `role` ORDER BY role_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `role` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:42:17+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Role/accessDisInsert
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `role_access` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role_access` [ RunTime:0.0004s ]
+SQL: DELETE FROM `role_access` WHERE ( role_id='5' ) [ RunTime:0.0074s ]
+SQL: INSERT INTO `role_access` (`role_id`,`access_id`) VALUES ('5','30') [ RunTime:0.0046s ]
+SQL: INSERT INTO `role_access` (`role_id`,`access_id`) VALUES ('5','31') [ RunTime:0.0039s ]
+
+[ 2016-05-18T15:42:17+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Role/ajaxIndex?limit=15&offset=0&sort=role_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_id`,`role_name`,`role_desc` FROM `role` ORDER BY role_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `role` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:42:22+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status/0?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0005s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:42:44+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status/0?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:42:49+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/selectOk
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+
+[ 2016-05-18T15:43:41+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/selectOk
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_course` [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0006s ]
+ERR: SQLSTATE[HY000]: General error: 1364 Field 'course_name' doesn't have a default value
+
+[ 2016-05-18T15:45:11+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/selectOk
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user_course` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `user_course` [ RunTime:0.0008s ]
+SQL: INSERT INTO `user_course` (`user_account_id`,`course_id`) VALUES ('21','5') [ RunTime:0.0070s ]
+SQL: INSERT INTO `user_course` (`user_account_id`,`course_id`) VALUES ('21','3') [ RunTime:0.0074s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000607s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000654s ]
+
+[ 2016-05-18T15:56:01+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status/0?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000749s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:56:05+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/selectOk
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001119s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_course` [ RunTime:0.0005s ]
+SQL: SELECT `course_id` FROM `user_course` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: row /var/www/html/yisheng/webframe/Admin/Controller/SelectcourseController.class.php 第 205 行.
+SQL: SHOW COLUMNS FROM `user_course` [ RunTime:0.0005s ]
+SQL: INSERT INTO `user_course` (`user_account_id`,`course_id`) VALUES ('21','5') [ RunTime:0.0056s ]
+
+[ 2016-05-18T15:56:05+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status/0?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000591s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0002s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:56:36+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status/0?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001081s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:56:39+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/selectOk
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_course` [ RunTime:0.0005s ]
+SQL: SELECT `course_id` FROM `user_course` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+
+[ 2016-05-18T15:59:43+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/selectOk
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_course` [ RunTime:0.0005s ]
+SQL: SELECT `course_id` FROM `user_course` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: row /var/www/html/yisheng/webframe/Admin/Controller/SelectcourseController.class.php 第 205 行.
+
+[ 2016-05-18T16:00:12+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/selectOk
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_course` [ RunTime:0.0005s ]
+SQL: SELECT `course_id` FROM `user_course` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+
+[ 2016-05-18T16:00:30+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/selectOk
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_course` [ RunTime:0.0005s ]
+SQL: SELECT `course_id` FROM `user_course` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+
+[ 2016-05-18T16:01:47+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/selectOk
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user_course` [ RunTime:0.0005s ]
+SQL: SELECT `course_id` FROM `user_course` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+
+[ 2016-05-18T16:02:13+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/selectOk
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000819s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_course` [ RunTime:0.0005s ]
+SQL: SELECT `course_id` FROM `user_course` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+
+[ 2016-05-18T16:02:39+08:00 ] 124.64.242.106 /yisheng/webframe/index.php/Admin/Selectcourse/ajaxIndex/status/0?limit=15&offset=0&sort=course.course_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000401s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='f2234d4f60aaa0fe4fec5e0ee3dd43ae' )  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `user_account` WHERE ( user_account_id=21 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `course` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) ORDER BY course.course_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `course` WHERE ( course_semester=1 and course_rel_status=1 and  course_workshop=9 ) LIMIT 1   [ RunTime:0.0002s ]
+

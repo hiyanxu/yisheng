@@ -20,7 +20,7 @@ class CourseUserModel extends Model{
 			return $return;
 		}
 		else{
-			if(M("course")->data($data)->add()){
+			if(M("user_course")->data($data)->add()){
 				$return=array(
 					"status"=>true,
 					"msg"=>"添加成功"

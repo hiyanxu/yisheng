@@ -23,7 +23,7 @@
         <div>
             <div class="modal-body">
                 <form id="wt-forms" method="post" tabindex="-1" onsubmit="return false;" class="form-horizontal">
-                    <input type="hidden" value="0" name="parentid">
+                    <input type="hidden" value="<?php echo ($course_id); ?>" name="course_id">
                     <div class="form-group">
                         <label class="col-xs-3 control-label">课程号：</label>
                         <div class="col-xs-8">

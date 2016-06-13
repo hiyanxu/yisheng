@@ -236,3 +236,13 @@ function getExAcesByWof($role=null,$wof_id=null,$wof_step_now=null,$ex_status=nu
 
 
 }
+
+/*
+页面数据打印
+*/
+function dd($data){
+	echo "<pre>";
+	var_dump($data);
+	echo "</pre>";
+	die();
+}

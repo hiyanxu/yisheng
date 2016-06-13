@@ -1,0 +1,396 @@
+[ 2016-06-03T14:13:12+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=1&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='1' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='1' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-06-03T14:13:14+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000715s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0007s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='10' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-06-03T14:23:06+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='10' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-06-03T14:23:26+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000978s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='10' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-06-03T14:23:40+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='10' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0001s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0001s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0001s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-06-03T14:23:43+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+ERR: 非法操作:ajaxIndex
+
+[ 2016-06-03T14:23:45+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000685s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='10' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-06-03T14:23:46+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='10' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-06-03T14:23:48+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000973s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0007s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='10' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='1' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='8' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-06-03T14:24:58+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=1&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000750s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and user.org_id=9 account.is_admin='1' ) ORDER BY user.user_id desc LIMIT 0,15' at line 1
+
+[ 2016-06-03T14:24:59+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and user.org_id=9 account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15' at line 1
+
+[ 2016-06-03T14:25:26+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and user.org_id=9 account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15' at line 1
+
+[ 2016-06-03T14:26:31+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000758s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and user.org_id=9 and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,' at line 1
+
+[ 2016-06-03T14:28:16+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and user.org_id=9 and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,' at line 1
+
+[ 2016-06-03T14:28:56+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000655s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and user.org_id=9 and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0001s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-06-03T14:32:15+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&search=5&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000597s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and user.org_id=9 and user.user_name like '%5%' and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-06-03T14:32:17+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&search=&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000673s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and user.org_id=9 and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-06-03T14:32:21+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&search=y&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000691s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and user.org_id=9 and user.user_name like '%y%' and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-06-03T14:32:22+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&search=&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and user.org_id=9 and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0007s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0007s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-06-03T14:32:26+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&search=%E9%97%AB%E6%97%AD&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and user.org_id=9 and user.user_name like '%闫旭%' and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-06-03T14:32:27+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&search=%E9%97%AB&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and user.org_id=9 and user.user_name like '%闫%' and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0007s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-06-03T14:32:30+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&search=&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000696s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and user.org_id=9 and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-06-03T14:32:32+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&search=%E6%97%AD&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000701s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and user.org_id=9 and user.user_name like '%旭%' and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-06-03T14:32:34+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/User/ajaxIndex?limit=15&offset=0&search=&sort=user.user_id&order=desc&isAdmin=0&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and user.org_id=9 and account.is_admin='0' ) ORDER BY user.user_id desc LIMIT 0,15   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0007s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='4' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SELECT `role_name` FROM `role` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT `org_name` FROM `organization` WHERE ( org_id='9' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` `user`,`user_account` `account` WHERE ( account.user_id=user.user_id and account.is_admin='0' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-06-03T14:33:09+08:00 ] 175.49.166.158 /yisheng/webframe/index.php/Admin/Workshop/ajaxIndex?limit=15&offset=0&sort=org_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='ace9909ec4cca648370bb9045a57be17' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT `org_id` FROM `user` WHERE ( user_id=7 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `organization` [ RunTime:0.0006s ]
+SQL: SELECT `org_id`,`org_name`,`org_english_name`,`org_user_id`,`org_icon`,`org_location` FROM `organization` WHERE ( org_id=9 ) ORDER BY org_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `organization` WHERE ( org_id=9 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( user_id=7 )  [ RunTime:0.0002s ]
+

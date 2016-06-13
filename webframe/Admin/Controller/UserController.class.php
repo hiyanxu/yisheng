@@ -25,17 +25,19 @@ class UserController extends Controller{
 	*/
 	public function add(){
 		$isAdmin=I("get.isAdmin");
-		$role_rows=M("role")->field("role_id,role_name")->select();
 
 		$loginuser=session("loginuser");  //获取登录账号的session信息
 		$loginuserid=session("loginuserid");  //获取登录人对应user表主键id
 		$org_obj=new OrgModel();
 		if($loginuser=="admin"){  //若当前登录人是admin，默认给出所有组织机构			
 			$org_rows=$org_obj->getOrgTreeRows(0);
+			$role_rows=M("role")->field("role_id,role_name")->select();
 		}
 		else{
 			$user_row=M("user")->where("user_id='".$loginuserid."'")->field("org_id")->select();  //获取对应管理员所在的机构org_id
-			$org_rows=$org_obj->getOrgTreeRows($user_row[0]['org_id']);  //获取此用户对应机构及该机构的下属机构
+			$haha=M("organization")->where("org_id={$user_row[0]['org_id']}")->field("org_id,org_name")->limit(1)->select();  //获取此用户对应机构及该机构的下属机构
+			$org_rows[$haha[0]['org_id']]=$haha[0]['org_name'];
+			$role_rows=M("role")->where("role_id in (4,5,6)")->field("role_id,role_name")->select();
 		}
 
 		$this->assign("org_rows",$org_rows);
@@ -84,16 +86,39 @@ class UserController extends Controller{
 	public function ajaxIndex(){
 		$isAdmin=I("get.isAdmin");  //根据参数看是获取管理员的还是用户的数据
 		$order=I("get.sort")." ".I("get.order");  //获取排列顺序
+		$login_role_id=session('loginuserroleid');
+		$login_user_id=session('loginuserid');
 		if(I("get.sort")&&I("get.order")){
 			if(I("get.search")){
-				$user_data=M()->table(array("user"=>"user","user_account"=>"account"))
-				->field("user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id")
-				->where("account.user_id=user.user_id and user.user_name like '%".I("get.search")."%' and account.is_admin='".$isAdmin."'")->order($order)->limit(I("get.offset"),I("get.limit"))->select();
+				if($login_role_id==1){  //系统最高管理员，获取所有人员信息	
+					$user_data=M()->table(array("user"=>"user","user_account"=>"account"))
+					->field("user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id")
+					->where("account.user_id=user.user_id and user.user_name like '%".I("get.search")."%' and account.is_admin='".$isAdmin."'")->order($order)->limit(I("get.offset"),I("get.limit"))->select();
+				}
+				else{  //非系统最高管理员，获取当前登录人所在实验室的人员信息
+					$user_org_row=M('user')->where("user_id={$login_user_id}")->field("org_id")->limit(1)->select();
+					$user_org_id=$user_org_row[0]['org_id'];
+					$user_data=M()->table(array("user"=>"user","user_account"=>"account"))
+					->field("user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id")
+					->where("account.user_id=user.user_id and user.org_id={$user_org_id} and user.user_name like '%".I("get.search")."%' and account.is_admin='".$isAdmin."'")->order($order)->limit(I("get.offset"),I("get.limit"))->select();
+				}
+				
 			}
 			else{
-				$user_data=M()->table(array("user"=>"user","user_account"=>"account"))
-				->field("user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id")
-				->where("account.user_id=user.user_id and account.is_admin='".$isAdmin."'")->order($order)->limit(I("get.offset"),I("get.limit"))->select();
+				if($login_role_id==1){
+					$user_data=M()->table(array("user"=>"user","user_account"=>"account"))
+					->field("user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id")
+					->where("account.user_id=user.user_id and account.is_admin='".$isAdmin."'")->order($order)->limit(I("get.offset"),I("get.limit"))->select();
+				}
+				else{
+
+					$user_org_row=M('user')->where("user_id={$login_user_id}")->field("org_id")->limit(1)->select();
+					$user_org_id=$user_org_row[0]['org_id'];
+					$user_data=M()->table(array("user"=>"user","user_account"=>"account"))
+					->field("user.user_id,user.user_name,user.org_id,account.user_account,account.role_id,account.isenable,account.user_account_id")
+					->where("account.user_id=user.user_id and user.org_id={$user_org_id} and account.is_admin='".$isAdmin."'")->order($order)->limit(I("get.offset"),I("get.limit"))->select();
+				}
+				
 			}
 			
 		}
@@ -254,5 +279,34 @@ class UserController extends Controller{
 		header("HTTP/1.0 404 NOT　Found");
 		$this->display("Empty/index");  //让他找到404页面
 	}
+
+	/*
+	个人信息管理页面显示
+	*/
+	public function singal(){
+		$user_account_id=session('loginaccount');  //获取当前登录人用户账号表主键id
+		$user_id=session('loginuserid');
+		$user_account_row=M("user_account")->where("user_account_id={$user_account_id}")->field('user_account,user_pwd')->limit(1)->select();
+		$user_name=M("user")->where("user_id={$user_id}")->field("user_name")->select();
+		$this->assign("user_name",$user_name[0]['user_name']);
+		$this->assign("id",$user_account_id);
+		$this->assign("data",$user_account_row);
+		$this->display("singal");
+	}
+
+	/*
+	个人信息修改保存操作
+	*/
+	public function singalSave(){
+		$data_post=I("post.");
+		$data=array(
+			"user_account"=>$data_post['user_account'],
+			"user_pwd"=>$data_post['user_pwd']
+			);
+		$obj=new UseraccModel();
+		$return=$obj->editSave($data_post['user_account_id'],$data);
+		$this->ajaxReturn($return,"JSON");
+	}
+
 
 }

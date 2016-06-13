@@ -20,6 +20,14 @@
 				<div id="headshow" >
 					<button type="button" class="btn btn-success btn-sm" onclick="add();"><span class="glyphicon glyphicon-plus"></span>添加开放日</button>
 					<button type="button" class="btn btn-danger btn-sm" onclick="delmore(null)"><span class="glyphicon glyphicon-trash"></span>批量删除</button>
+					&nbsp;审核状态：
+					<select id="ex_status" name="ex_status">
+						<option value="">全部</option>
+						<option value="0">未提交审核</option>
+						<option value="1">正在审核中</option>
+						<option value="2">审核未通过</option>
+						<option value="3">审核通过</option>
+					</select>
 					&nbsp;&nbsp;所属实验室：
 					<select id="open_workshop" name="open_workshop">
 						<option value="">全部</option>
@@ -164,6 +172,9 @@
 				}
 				if(typeof(params.open_workshop=="undefined")){
 					params.open_workshop=$("#open_workshop").val();
+				}
+				if(typeof(params.lec_ex_status=="undefined")){
+					params.lec_ex_status=$("#ex_status").val();
 				}
 				params.UserName = 4;
 				params.page = params.pageNumber;
@@ -441,6 +452,9 @@
 		$(function(){
 			$("#open_workshop").change(function(){
 				$('#table').bootstrapTable('refresh', ''); //刷新表格				
+			});
+			$("#ex_status").change(function(){
+				$('#table').bootstrapTable('refresh', ''); //刷新表格
 			});
 		});
 

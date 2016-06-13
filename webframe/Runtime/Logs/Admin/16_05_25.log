@@ -1,0 +1,135 @@
+[ 2016-05-25T21:35:35+08:00 ] 114.250.160.69 /yisheng/webframe/index.php/Admin/Role/ajaxIndex?limit=15&offset=0&sort=role_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000706s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_id`,`role_name`,`role_desc` FROM `role` ORDER BY role_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `role` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-25T21:37:06+08:00 ] 114.250.160.69 /yisheng/webframe/index.php/Admin/Role/ajaxIndex?limit=15&offset=0&sort=role_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001003s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_id`,`role_name`,`role_desc` FROM `role` ORDER BY role_id desc LIMIT 0,15   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `role` LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-05-25T21:37:12+08:00 ] 114.250.160.69 /yisheng/webframe/index.php/Admin/Role/getMenuTree?role_id=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000898s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0005s ]
+SQL: SELECT `menu_name`,`menu_id` FROM `menu` WHERE ( parentid=0 and ishidden=0 )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `role_menu` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `role_menu` WHERE ( role_id='2' )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='10' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_name`,`menu_id`,`parentid` FROM `menu` WHERE ( parentid='10' )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='21' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='27' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='28' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='11' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_name`,`menu_id`,`parentid` FROM `menu` WHERE ( parentid='11' )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='13' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='14' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='17' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_name`,`menu_id`,`parentid` FROM `menu` WHERE ( parentid='17' )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='34' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='20' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='12' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_name`,`menu_id`,`parentid` FROM `menu` WHERE ( parentid='12' )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='18' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='19' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='22' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='23' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='24' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='29' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_name`,`menu_id`,`parentid` FROM `menu` WHERE ( parentid='29' )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='30' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='31' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_name`,`menu_id`,`parentid` FROM `menu` WHERE ( parentid='31' )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='32' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='33' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='35' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_name`,`menu_id`,`parentid` FROM `menu` WHERE ( parentid='35' )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='36' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='37' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='39' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='41' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_name`,`menu_id`,`parentid` FROM `menu` WHERE ( parentid='41' )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='42' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='43' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_name`,`menu_id`,`parentid` FROM `menu` WHERE ( parentid='43' )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='44' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='45' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_name`,`menu_id`,`parentid` FROM `menu` WHERE ( parentid='45' )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='46' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='47' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `menu_name`,`menu_id`,`parentid` FROM `menu` WHERE ( parentid='47' )  [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='48' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='49' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-25T22:20:08+08:00 ] 114.250.160.69 /yisheng/webframe/index.php/Admin/Workflow/ajaxIndex?limit=15&offset=0&sort=workflow_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000752s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0007s ]
+SQL: SELECT `workflow_id`,`workflow_name`,`workflow_desc`,`steps` FROM `workflow` ORDER BY workflow_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `workflow` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-25T22:20:13+08:00 ] 114.250.160.69 /yisheng/webframe/index.php/Admin/Workflow/getrole
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0005s ]
+SQL: SELECT `role_id`,`role_name` FROM `role`  [ RunTime:0.0002s ]
+
+[ 2016-05-25T22:20:15+08:00 ] 114.250.160.69 /yisheng/webframe/index.php/Admin/Workflow/getrole
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001010s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `role` [ RunTime:0.0006s ]
+SQL: SELECT `role_id`,`role_name` FROM `role`  [ RunTime:0.0002s ]
+
+[ 2016-05-25T23:18:59+08:00 ] 114.250.160.69 /yisheng/webframe/index.php/Admin/Menu/ajaxIndex?limit=15&offset=0&sort=id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0006s ]
+SQL: SELECT `menu_id`,`menu_name`,`parentid`,`menu_url`,`sort`,`ishidden` FROM `menu` WHERE ( parentid=0 ) ORDER BY sort asc  [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-25T23:27:31+08:00 ] 114.250.160.69 /yisheng/webframe/index.php/Admin/Menu/childAjaxIndex?limit=15&offset=0&sort=id&order=desc&menu_id=12&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `menu` [ RunTime:0.0006s ]
+SQL: SELECT `menu_id`,`menu_name`,`parentid`,`menu_url`,`sort`,`ishidden` FROM `menu` WHERE ( parentid='12' ) ORDER BY sort asc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: parentid /var/www/html/yisheng/webframe/Admin/Controller/MenuController.class.php 第 132 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `menu` WHERE ( parentid='' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-05-25T23:46:14+08:00 ] 114.250.160.69 /yisheng/webframe/index.php/Admin/Workflow/ajaxIndex?limit=15&offset=0&sort=workflow_id&order=desc&UserName=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+SQL: SHOW COLUMNS FROM `user_account` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user_account` WHERE ( user_identify='b244536f4994b14f55f19e9c7a9ba144' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `workflow` [ RunTime:0.0005s ]
+SQL: SELECT `workflow_id`,`workflow_name`,`workflow_desc`,`steps` FROM `workflow` ORDER BY workflow_id desc LIMIT 0,15   [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `workflow` LIMIT 1   [ RunTime:0.0002s ]
+

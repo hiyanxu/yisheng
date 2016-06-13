@@ -19,6 +19,8 @@
 
         <script src="{$Think.const.WWW_PUB}Public/Admin/uploadify/jquery.uploadify.js"></script>
         <link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}Public/Admin/uploadify/uploadify.css">
+        <script src="{$Think.const.WWW_PUB}Public/Admin/zyupload/zyupload-1.0.0.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.WWW_PUB}Public/Admin/zyupload/skins/zyupload-1.0.0.min.css">
 
         <!--kindeditor-->
         <script type="text/javascript">
@@ -73,6 +75,7 @@
                             </div>
                         </div>
                     </div>
+                    <div id="zyupload" class="zyupload"></div>  
 
                     <div class="form-group">
                         <label class="col-xs-3 control-label">开放日地点：</label>
@@ -108,124 +111,58 @@
 
 
 
-    <!--上传部分js代码-->
-        <script type="text/javascript">
-        $(function(){
-                        fileext="*.jpg;*.gif;*.jpeg;*.png";
-                        fileDesc="请选择图像文件";
-                        upload_init(fileext,fileDesc);
-                    
-        });
-
-
-        var sid="{:session_id()}";
-        jQuery(function($) {
-             upload_init(fileext,fileDesc);
-
-        });
-
-        function upload_init(fileext,fileDesc){
-            $('#pickfiles').uploadify({
-                'debug': false,
-                'method': 'post',
-                'swf': "{$Think.const.WWW_PUB}Public/Admin/uploadify/uploadify.swf", //    swf 地址
-                'uploader': '__URL__/uploader', // 服务器端处理程序                
-                'wmode': 'transparent', //使浏览按钮的flash背景文件透明
-                'buttonText': '选择',
-                'formData': {
-                    'timestamp': '<?php echo $timestamp;?>',
-                    'token': '<?php echo md5('unique_salt' . $timestamp);?>',
-                    "session_id":sid
-                },
-                'height': 35,
-                'width': 50,
-                'preventCaching': true, // true不缓存 false缓存
-                'fileTypeExts':fileext,
-                'fileTypeDesc': fileDesc,
-                //'removeTimeout' : 3,          // 上传完成后 移除的时间
-                //'queueSizeLimit' : 10,            // 上传队列中一次可容纳的最大条数。该选项不限制上传文件数量。限制上传文件数量，使用uploadlimit选项。如果上传队列中的数量超过此限制，则触发onselecterror事件。 
-                //'successTimeout' : 3600,      // 成功等待时间？
-                'uploadLimit': 10, // 定义允许的最大上传数量。当达到或者超过该数值时，将触发 onSelectError事件。 
-                'multi': true,
-                'onUploadSuccess': function(file, data, response) {
-                    var data = $.parseJSON(data);
-                    var status = data.status;
-                    alert(status);
-                    if(status){
-                        $('#open_thumb').val(data.name);
+    <script type="text/javascript">
+            $(function(){
+                var _token=$("#_token").val();
+                // 初始化插件
+                $("#zyupload").zyUpload({
+                    width            :   "650px",                 // 宽度
+                    height           :   "400px",                 // 宽度
+                    itemWidth        :   "140px",                 // 文件项的宽度
+                    itemHeight       :   "115px",                 // 文件项的高度
+                    url              :   "__URL__/uploader",  // 上传文件的路径
+                    fileType         :   ["jpg","png","PNG","jpeg","txt","js","exe","mp4"],// 上传文件的类型
+                    fileSize         :   51200000,                // 上传文件的大小
+                    multiple         :   false,                    // 是否可以多个文件上传
+                    dragDrop         :   true,                    // 是否可以拖动上传文件
+                    tailor           :   true,                    // 是否可以裁剪图片
+                    del              :   true,                    // 是否可以删除文件
+                    finishDel        :   false,                   // 是否在上传文件完成后删除预览
+                    /* 外部获得的回调接口 */
+                    onSelect: function(selectFiles, allFiles){    // 选择文件的回调方法  selectFile:当前选中的文件  allFiles:还没上传的全部文件
+                        console.info("当前选择了以下文件：");
+                        console.info(selectFiles);
+                    },
+                    onDelete: function(file, files){              // 删除一个文件的回调方法 file:当前删除的文件  files:删除之后的文件
+                        console.info("当前删除了此文件：");
+                        console.info(file.name);
+                    },
+                    onSuccess: function(file, response){          // 文件上传成功的回调方法
+                        console.info("此文件上传成功：");
+                        console.info(file.name);
+                        console.info("此文件上传到服务器地址：");
+                        console.info(response);
+                        $("#uploadInf").append("<p>上传成功，文件地址是：" + response + "</p>");
+                        var responseEval=JSON.parse(response);
+                        if(responseEval['status']){
+                            var url="/var/www/html/yisheng/webframe/Public/upload/"+responseEval.name;
+                            $('#open_thumb').val(url);
+                        }
+                    },
+                    onFailure: function(file, response){          // 文件上传失败的回调方法
+                        console.info("此文件上传失败：");
+                        console.info(file.name);
+                    },
+                    onComplete: function(response){               // 上传完成的回调方法
+                        console.info("文件上传完成");
+                        console.info(response);
                     }
-                    if (status == false)
-                    {
-                        $.weitac.alert('上传失败，' + data.msg, 0);
-                    }
-                },
-                'onUploadError': function(file, errorCode, errorMsg) {
-                    alert(errorMsg);alert(errorCode);
-                },
-                // 模版的设置
-
-                // 不显示模版，通过事件来显示文件
-                //'itemTemplate' : '',
-
-                // --------------------------------------------------------------------------------  一些事件
-
-               /* // 动态设置有问题，再研究
-                'onUploadStart': function(file) {
-                    //$("#file_upload").uploadify("settings", "uploadUserId", '3333');
-                },
-                // 失败执行的函数 报错！！
-                'onUploadError': function(file, errorCode, errorMsg) {
-                    //alert('上传错误，请重新再试!');
-                },*/
-                // 上传成功一个文件后 执行的事件  data 为 PHP echo输出的内容  response为true 上传成功 false上传失败
-                /*'onUploadSuccess': function(file, data, response) {
-                    alert("成功了！");
-                    var data = $.parseJSON(data);
-                    alert(data);
-                    var status = data.status;
-                    $('#thumb').val("/"+data.info.filepath+data.info.filename);
-
-                    if (status == false)
-                    {
-                        $.weitac.alert('上传失败，' + data.msg, 0);
-                    }
-                },
-                // 上传完毕 调用的函数 uploadsSuccessful成功的文件数量  uploadsErrored失败的文件数量
-                'onQueueComplete': function(queueData) {
-
-                    // $.weitac.tableRefresh(wt);
-                    // alert(queueData.uploadsSuccessful + ' 个文件上传成功.' + queueData.uploadsErrored + '个文件上传失败.');
-                },
-                // 每添加一个文件至上传队列时触发该事件
-                'onSelect': function(file) {
-                    // alert(file.name + ' 文件添加至上传队列.');
-                },
-                'onSelectError': function(file, errorCode, errorMsg) {
-
-                    if (errorCode == SWFUpload.QUEUE_ERROR.QUEUE_LIMIT_EXCEEDED) {
-                        this.queueData.errorMsg = "上传的文件数过多"
-                    }
-
-                    if (errorCode == SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT) {
-                        this.queueData.errorMsg = "文件太大了"
-                    }
-
-                    if (errorCode == SWFUpload.QUEUE_ERROR.ZERO_BYTE_FILE) {
-                        this.queueData.errorMsg = "不能传空文件"
-                    }
-
-                    if (errorCode == SWFUpload.QUEUE_ERROR.INVALID_FILETYPE) {
-                        this.queueData.errorMsg = "文件类型不正确"
-                    }
-                },
-                // 每一个文件上传完成都会触发该事件，不管是上传成功还是上传失败
-                'onUploadComplete': function(file) {
-                    //alert(file.name + ' 文件上传完成.');
-                }*/
+                });
+                
             });
+        
+        </script> 
 
-        }
-        </script>
 
 
 

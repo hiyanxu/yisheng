@@ -616,12 +616,14 @@ class CourseController extends AdminController{
 	*/
 	public function dataUploadSave(){
 		$course_id=I("post.course_id");
+
 		$course_num=I("post.course_num");
 		$course_score=I("post.course_num");
 		$data=array(
 			"course_num"=>$course_num,
 			"course_score"=>$course_score
 			);
+		
 		$obj=new CourseModel();
 		$return=$obj->dataEdit($course_id,$data);
 		if($return['status']){
@@ -722,10 +724,11 @@ class CourseController extends AdminController{
 	*/
 	public function getSelectStu(){
 		$course_id=I("get.course_id");
-		$course_speaker=M("course")->where("course_id={$course_id}")->field("course_name,course_speaker")->select()->limit(1);
+		$course_speaker=M("course")->where("course_id={$course_id}")->field("course_name,course_speaker")->limit(1)->select();
+		
 		$this->assign("course_speaker",$course_speaker[0]['course_speaker']);
 		$this->assign("course_id",$course_id);
-		$this->assign("course_name",$course_name);
+		$this->assign("course_name",$course_speaker[0]['course_name']);
 		$this->display("Course/getSelectStu");
 	}
 
@@ -740,11 +743,11 @@ class CourseController extends AdminController{
 		foreach ($data as $key => $value) {
 			# code...
 			$user_id_rows=M("user_account")->where("user_account_id={$value['user_account_id']}")->field("user_id")->select();
-			$user_info=M("user")->where("user_id={$user_id_rows[0]['user_id']}")->field("user_name,user_sex,org_id,user_phone")->select()->limit(1);
+			$user_info=M("user")->where("user_id={$user_id_rows[0]['user_id']}")->field("user_name,user_sex,org_id,user_phone")->limit(1)->select();
 			$data[$key]['user_name']=$user_info[0]['user_name'];
 			$data[$key]['user_sex']=$user_info[0]['user_sex']==0?"男":"女";
 			$data[$key]['user_phone']=$user_info[0]['user_phone'];
-			$user_workshop=M("organization")->where("org_id={$user_info[0]['org_id']}")->field("org_name")->select()->limit(1);
+			$user_workshop=M("organization")->where("org_id={$user_info[0]['org_id']}")->field("org_name")->limit(1)->select();
 			$data[$key]['course_workshop_name']=$user_workshop[0]['org_name'];
 		}
 		$count=M("user_course")->where("course_id={$course_id}")->field("user_account_id")->count();
